@@ -1,0 +1,8 @@
+actor,malware,ioc_type,ioc_value,first_seen,last_seen,source,confidence,context
+TA542,Emotet,ipv4,162.243.103.246,2022-06-04 21:24:53,2026-03-07,abuse.ch Feodo Tracker,High,"Botnet C2 endpoint (port 8080, status offline, AS14061 DIGITALOCEAN-ASN, US) tracked from sinkhole telemetry"
+TA542,Emotet,technique,T1071.001,2014-06,2023,MITRE ATT&CK S0367,High,Application Layer Protocol: Web Protocols used for C2
+TA542,Emotet,technique,T1571,2019-01,2023,MITRE ATT&CK S0367,High,HTTP over non-standard ports 20/22/443/7080/50000
+TA542,Emotet,technique,T1573.001,2014-06,2023,MITRE ATT&CK S0367,High,Encrypted Channel: RSA-encrypted C2 traffic
+TA505,Dridex,technique,T1090,2015,2020,MITRE ATT&CK S0384,High,Peer-to-peer/backconnect proxy C2 relay between infected peers
+TA505,Dridex,technique,T1573.001,2015,2020,MITRE ATT&CK S0384,High,RC4-encrypted C2 channel
+FIN6,FrameworkPOS,technique,T1048.003,2016,2019,MITRE ATT&CK G0037,High,Card data exfiltrated to remote servers via HTTP POST

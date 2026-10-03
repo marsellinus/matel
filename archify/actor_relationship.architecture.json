@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Threat Actor – Malware – IOC Relationship Map",
+    "output": "figures/actor-relationship.html",
+    "quality_profile": "showcase",
+    "visual_preset": "blueprint",
+    "animation": "none"
+  },
+  "components": [
+    { "id": "ta542", "type": "external", "label": "TA542", "sublabel": "actor TA542", "pos": [40, 122], "size": [140, 66] },
+    { "id": "ta505", "type": "external", "label": "TA505", "sublabel": "actor TA505", "pos": [40, 486], "size": [140, 66] },
+    { "id": "fin6", "type": "external", "label": "FIN6", "sublabel": "G0037; aliases Skeleton Spider, ITG08, Magecart Group 6", "pos": [275, 758], "size": [230, 66] },
+
+    { "id": "emotet", "type": "security", "label": "Emotet", "sublabel": "S0367", "pos": [275, 122], "size": [160, 66] },
+    { "id": "emotet-ttp", "type": "database", "label": "Emotet TTPs", "sublabel": "mitre T1071.001, T1571, T1573.001", "pos": [520, 40], "size": [240, 66] },
+    { "id": "emotet-c2", "type": "cloud", "label": "Emotet C2 IPs", "sublabel": "abuse.ch Feodo Tracker", "pos": [520, 170], "size": [200, 66] },
+
+    { "id": "dridex", "type": "security", "label": "Dridex", "sublabel": "S0384", "pos": [275, 486], "size": [160, 66] },
+    { "id": "dridex-ttp", "type": "database", "label": "Dridex TTPs", "sublabel": "T1090, T1573.001, T1486", "pos": [520, 404], "size": [200, 66] },
+    { "id": "dridex-ioc", "type": "database", "label": "Dridex IOC set", "sublabel": "CISA AA19-339A: 12 IPv4, 16 email", "pos": [520, 534], "size": [250, 66] },
+
+    { "id": "fin6-tools", "type": "security", "label": "FIN6 tooling", "sublabel": "Cobalt Strike, More_eggs, HARDTACK, SHIPBREAD, Ryuk", "pos": [275, 626], "size": [240, 66] },
+    { "id": "fin6-ttp", "type": "database", "label": "FIN6 TTPs", "sublabel": "T1003.001, T1003.003, T1048.003", "pos": [600, 758], "size": [230, 66] },
+    { "id": "fin6-doc", "type": "external", "label": "Not documented", "sublabel": "no network IOC in sources", "pos": [40, 881], "size": [200, 66] }
+  ],
+  "connections": [
+    { "id": "ta542-emotet", "from": "ta542", "to": "emotet", "variant": "emphasis" },
+    { "id": "emotet-ttp", "from": "emotet", "to": "emotet-ttp", "variant": "emphasis" },
+    { "id": "emotet-c2", "from": "emotet", "to": "emotet-c2", "variant": "emphasis" },
+
+    { "id": "ta505-dridex", "from": "ta505", "to": "dridex", "variant": "emphasis" },
+    { "id": "dridex-ioc", "from": "dridex", "to": "dridex-ioc", "variant": "emphasis" },
+    { "id": "dridex-ttp", "from": "dridex", "to": "dridex-ttp", "variant": "emphasis" },
+
+    { "id": "fin6-frameworkpos", "from": "fin6", "to": "fin6-tools", "label": "FrameworkPOS S0503", "variant": "emphasis" },
+    { "id": "fin6-tools-ttp", "from": "fin6-tools", "to": "fin6-ttp", "variant": "emphasis" },
+    { "id": "fin6-network-iocs", "from": "fin6", "to": "fin6-doc", "label": "network IOCs", "variant": "emphasis" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Evidence classes used", "items": ["Documented: matrix technique IDs are quoted from the analysed evidence", "Reported: CISA AA19-339A and abuse.ch Feodo rows keep source, first/last seen", "Inferred: none — no relationship is inferred, and none is invented"] },
+    { "dot": "amber", "title": "Infrastructure kept as passive history", "items": ["Emotet C2 addresses are historical passive records only", "Retained for correlation and long-term tracking, not for live use"] },
+    { "dot": "rose", "title": "Safety note", "items": ["Passive, IOC-only collection: no contact with any C2 address", "No payload retrieval, no execution, no sample handling of any kind"] }
+  ]
+}

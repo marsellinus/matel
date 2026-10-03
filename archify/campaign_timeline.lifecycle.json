@@ -1,0 +1,256 @@
+{
+ "schema_version": 2,
+ "diagram_type": "lifecycle",
+ "meta": {
+  "title": "MATEL Campaign Timeline (documented activity windows)",
+  "subtitle": "Published observations only - MITRE ATT&CK, CISA AA19-339A, Feodo Tracker",
+  "output": "figures/campaign-timeline.html",
+  "animation": "none",
+  "visual_preset": "editorial",
+  "quality_profile": "showcase",
+  "viewBox": [
+   1240,
+   572
+  ]
+ },
+ "lanes": [
+  {
+   "id": "main",
+   "label": "2014 - 2019  emergence and operations"
+  },
+  {
+   "id": "santions",
+   "label": "2019 - 2026  sanctions and recovery"
+  },
+  {
+   "id": "open",
+   "label": "Unresolved"
+  }
+ ],
+ "states": [
+  {
+   "id": "emotet",
+   "type": "start",
+   "label": "Emotet emerges",
+   "sublabel": "financial sector",
+   "lane": "main",
+   "col": 0,
+   "step": "2014-06",
+   "tag": "S0367",
+   "yOffset": -12
+  },
+  {
+   "id": "dridex",
+   "type": "active",
+   "label": "Dridex appears",
+   "sublabel": "from Bugat / Cridex",
+   "lane": "main",
+   "col": 1,
+   "step": "2014-11/12",
+   "tag": "S0384",
+   "yOffset": -12
+  },
+  {
+   "id": "fin6",
+   "type": "active",
+   "label": "FIN6 active",
+   "sublabel": "PoS hospitality + retail",
+   "lane": "main",
+   "col": 2,
+   "step": "2015",
+   "tag": "G0037",
+   "yOffset": -12
+  },
+  {
+   "id": "fireeye",
+   "type": "external",
+   "label": "FireEye analysis",
+   "sublabel": "FIN6 PoS operation",
+   "lane": "main",
+   "col": 3,
+   "step": "2016-04",
+   "tag": "G0037",
+   "yOffset": -12
+  },
+  {
+   "id": "ryuk",
+   "type": "active",
+   "label": "Ryuk + LockerGoga",
+   "sublabel": "FIN6 intrusion link",
+   "lane": "main",
+   "col": 4,
+   "step": "2019-04",
+   "tag": "G0037",
+   "yOffset": -12
+  },
+  {
+   "id": "p2p",
+   "type": "neutral",
+   "label": "Dridex P2P takeover",
+   "sublabel": "Evil Corp sanctioned",
+   "lane": "santions",
+   "col": 0,
+   "step": "2019-10/12",
+   "tag": "S0384",
+   "yOffset": -12
+  },
+  {
+   "id": "advisory",
+   "type": "decision",
+   "label": "CISA AA19-339A",
+   "sublabel": "Dridex IOC set",
+   "lane": "santions",
+   "col": 1,
+   "step": "2019-12-03",
+   "tag": "IOC source",
+   "yOffset": -12
+  },
+  {
+   "id": "takedown",
+   "type": "waiting",
+   "label": "Emotet takedown",
+   "sublabel": "law enforcement",
+   "lane": "santions",
+   "col": 2,
+   "step": "2021-01",
+   "tag": "recovery point",
+   "yOffset": -12
+  },
+  {
+   "id": "firstseen",
+   "type": "waiting",
+   "label": "C2 first_seen",
+   "sublabel": "Feodo 162.243.103.246",
+   "lane": "santions",
+   "col": 3,
+   "step": "2022-06-04",
+   "tag": "recovery point",
+   "yOffset": -12
+  },
+  {
+   "id": "lastonline",
+   "type": "neutral",
+   "label": "Feodo last_online",
+   "sublabel": "evidence snapshot",
+   "lane": "santions",
+   "col": 4,
+   "step": "2026-03-04",
+   "tag": "snapshot",
+   "yOffset": -12
+  },
+  {
+   "id": "unknown",
+   "type": "neutral",
+   "label": "Unknown / Not documented",
+   "sublabel": "sources stop here",
+   "lane": "open",
+   "col": 0,
+   "step": "open",
+   "tag": "terminal",
+   "width": 220,
+   "yOffset": -12
+  }
+ ],
+ "transitions": [
+  {
+   "id": "t1",
+   "from": "emotet",
+   "to": "dridex",
+   "label": "2014-11/12 appears",
+   "note": "S0384",
+   "variant": "emphasis"
+  },
+  {
+   "id": "t2",
+   "from": "dridex",
+   "to": "fin6",
+   "label": "2015 active",
+   "note": "G0037",
+   "variant": "emphasis"
+  },
+  {
+   "id": "t3",
+   "from": "fin6",
+   "to": "fireeye",
+   "label": "2016-04 published",
+   "note": "G0037",
+   "variant": "emphasis"
+  },
+  {
+   "id": "t4",
+   "from": "fireeye",
+   "to": "ryuk",
+   "label": "2019-04 link",
+   "note": "G0037",
+   "variant": "emphasis"
+  },
+  {
+   "id": "t5",
+   "from": "ryuk",
+   "to": "p2p",
+   "label": "2019-10/12 takeover",
+   "note": "S0384",
+   "variant": "security"
+  },
+  {
+   "id": "t6",
+   "from": "p2p",
+   "to": "advisory",
+   "label": "2019-12-03 advisory",
+   "note": "CISA IOC set",
+   "variant": "emphasis"
+  },
+  {
+   "id": "t7",
+   "from": "advisory",
+   "to": "takedown",
+   "label": "2021-01 takedown",
+   "note": "law enforcement",
+   "variant": "security"
+  },
+  {
+   "id": "t8",
+   "from": "takedown",
+   "to": "firstseen",
+   "label": "2022-06-04 first_seen",
+   "note": "Feodo record",
+   "variant": "dashed"
+  },
+  {
+   "id": "t9",
+   "from": "firstseen",
+   "to": "lastonline",
+   "label": "2026-03-04 last_online",
+   "note": "evidence snapshot",
+   "variant": "dashed"
+  },
+  {
+   "id": "t10",
+   "from": "lastonline",
+   "to": "unknown",
+   "label": "sources stop here",
+   "note": "no further detail",
+   "variant": "default"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "Date provenance",
+   "items": [
+    "Every date above is traceable to the cited source, with no interpolation",
+    "S0367 S0384 and G0037 supply the ATT&CK dates; AA19-339A supplies the IOC set",
+    "Feodo Tracker supplies the first_seen and last_online stamps"
+   ]
+  },
+  {
+   "dot": "rose",
+   "title": "Scope limit",
+   "items": [
+    "The timeline records published observations, not the actors' true start or end dates",
+    "Absence of a date means the sources are silent, not that activity stopped",
+    "2021/2022 recovery points, the 2022-11 Epoch 4/5 resurgence and the 2026 snapshot are evidence checkpoints"
+   ]
+  }
+ ]
+}

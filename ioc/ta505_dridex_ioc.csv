@@ -1,0 +1,30 @@
+actor,malware,ioc_type,ioc_value,first_seen,last_seen,source,confidence,context
+TA505,Dridex,email,info@antonioscognamiglio.it,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,info@golfprogroup.com,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,cariola72@teletu.it,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,faturamento@sudestecaminhoes.com.br,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,info@melvale.co.uk,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,fabianurquiza@correo.dalvear.com.ar,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,web1587p16@mail.flw-buero.at,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,bounce@bestvaluestore.org,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,farid@abc-telecom.az,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,admin@sevpazarlama.com,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,pranab@pdrassocs.com,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,tom@blackburnpowerltd.co.uk,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,yportocarrero@elevenca.com,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,s.palani@itifsl.co.in,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,faber@imaba.nl,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,email,admin@belpay.by,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
+TA505,Dridex,ipv4,62.149.158.252,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,177.34.32.109,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,2.138.111.86,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,122.172.96.18,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,69.93.243.5,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,200.43.183.102,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,79.124.76.30,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,188.125.166.114,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,37.59.52.64,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,50.28.35.36,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,154.70.39.158,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,108.29.37.11,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure
+TA505,Dridex,ipv4,65.112.218.2,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Malicious IP associated with Dridex infrastructure

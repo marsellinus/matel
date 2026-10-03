@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "MATEL: Proposed Threat Intelligence Architecture",
+    "subtitle": "Proposed pipeline for the MATEL report: collection, normalisation, analysis, and reporting",
+    "output": "figures/matel-architecture.html",
+    "visual_preset": "blueprint",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "sources",
+      "type": "external",
+      "label": "Sources",
+      "sublabel": "CISA / Feodo / ATT&CK / Crossref",
+      "pos": [
+        40,
+        150
+      ],
+      "size": [
+        182,
+        74
+      ]
+    },
+    {
+      "id": "collectors",
+      "type": "backend",
+      "label": "Collectors",
+      "sublabel": "build_iocs + validate_references",
+      "pos": [
+        480,
+        150
+      ],
+      "size": [
+        196,
+        74
+      ]
+    },
+    {
+      "id": "normalisation",
+      "type": "security",
+      "label": "Normalisation",
+      "sublabel": "schema / dedupe / source tag",
+      "pos": [
+        920,
+        150
+      ],
+      "size": [
+        186,
+        74
+      ]
+    },
+    {
+      "id": "stores",
+      "type": "database",
+      "label": "Stores",
+      "sublabel": "ioc/ + evidence/ + figures/",
+      "pos": [
+        204,
+        380
+      ],
+      "size": [
+        174,
+        74
+      ]
+    },
+    {
+      "id": "analysis",
+      "type": "backend",
+      "label": "Analysis",
+      "sublabel": "ttp_mapping.json + comparison",
+      "pos": [
+        720,
+        530
+      ],
+      "size": [
+        190,
+        74
+      ]
+    },
+    {
+      "id": "reporting",
+      "type": "frontend",
+      "label": "Reporting",
+      "sublabel": "DOCX template fill + PDF export",
+      "pos": [
+        1224,
+        380
+      ],
+      "size": [
+        196,
+        74
+      ]
+    },
+    {
+      "id": "safety",
+      "type": "security",
+      "label": "Safety Boundary",
+      "sublabel": "passive only / no execution / no C2",
+      "pos": [
+        440,
+        545
+      ],
+      "size": [
+        200,
+        74
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Local analysis host (Python 3 + Archify + LibreOffice)",
+      "wraps": [
+        "collectors",
+        "normalisation",
+        "stores",
+        "analysis",
+        "reporting",
+        "safety"
+      ],
+      "pad": 26
+    },
+    {
+      "kind": "security-group",
+      "label": "Restricted data zone \u2014 passive evidence only",
+      "wraps": [
+        "normalisation",
+        "stores",
+        "analysis"
+      ],
+      "pad": 18
+    }
+  ],
+  "connections": [
+    {
+      "from": "sources",
+      "to": "collectors",
+      "label": "advisories + blocklists + DOI metadata",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "collectors",
+      "to": "normalisation",
+      "label": "raw IOC + refs",
+      "variant": "emphasis",
+      "route": "straight",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "normalisation",
+      "to": "stores",
+      "label": "write CSV + evidence",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "right"
+    },
+    {
+      "from": "stores",
+      "to": "analysis",
+      "label": "read IOC set",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "bottom"
+    },
+    {
+      "from": "analysis",
+      "to": "reporting",
+      "label": "TTP + comparison findings",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "bottom"
+    },
+    {
+      "from": "stores",
+      "to": "reporting",
+      "label": "figure assets",
+      "variant": "dashed",
+      "toSide": "left"
+    },
+    {
+      "from": "safety",
+      "to": "analysis",
+      "label": "governs",
+      "variant": "security",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "from": "safety",
+      "to": "stores",
+      "label": "no live C2 data",
+      "variant": "security",
+      "fromSide": "left",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "Proposed Architecture",
+      "items": [
+        "MATEL in this assignment is a report and analysis pipeline (Python + Archify + LibreOffice), not a deployed service."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Pipeline Evidence",
+      "items": [
+        "build_iocs.py normalises CISA and abuse.ch Feodo records into the shared IOC schema",
+        "validate_references.py resolves DOIs on Crossref and open-access locations on Unpaywall",
+        "ttp_mapping.json records MITRE ATT&CK evidence per actor and technique"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Safety Boundary",
+      "items": [
+        "Collection is passive: public advisory, blocklist, and DOI metadata only",
+        "No sample execution and no contact with live C2 infrastructure"
+      ]
+    }
+  ]
+}

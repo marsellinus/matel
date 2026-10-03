@@ -1,0 +1,240 @@
+{
+ "schema_version": 2,
+ "diagram_type": "workflow",
+ "meta": {
+  "title": "MATEL Threat Intelligence Lifecycle",
+  "subtitle": "Passive / IOC-only methodology (Proyek 25)",
+  "output": "figures/workflow-methodology.html",
+  "visual_preset": "blueprint",
+  "quality_profile": "showcase",
+  "animation": "none"
+ },
+ "lanes": [
+  {
+   "id": "lA",
+   "label": "Phase 1: Collection & Validation"
+  },
+  {
+   "id": "lB",
+   "label": "Phase 2: Analysis & Delivery"
+  }
+ ],
+ "phases": [
+  {
+   "id": "p1",
+   "label": "Collection + validation",
+   "fromCol": 0,
+   "toCol": 5,
+   "variant": "emphasis"
+  }
+ ],
+ "mainPath": [
+  "scope",
+  "actors",
+  "osint",
+  "ioc",
+  "validate",
+  "normalize"
+ ],
+ "nodes": [
+  {
+   "id": "scope",
+   "lane": "lA",
+   "col": 0,
+   "type": "external",
+   "label": "Scope",
+   "sublabel": "actors + questions",
+   "width": 140
+  },
+  {
+   "id": "actors",
+   "lane": "lA",
+   "col": 1,
+   "type": "external",
+   "label": "Actors",
+   "sublabel": "TA542, TA505, FIN6",
+   "width": 140
+  },
+  {
+   "id": "osint",
+   "lane": "lA",
+   "col": 2,
+   "type": "cloud",
+   "label": "OSINT",
+   "sublabel": "vendor + CERT reports",
+   "width": 150
+  },
+  {
+   "id": "ioc",
+   "lane": "lA",
+   "col": 3,
+   "type": "cloud",
+   "label": "IOC Collection",
+   "sublabel": "CISA, Feodo",
+   "width": 150
+  },
+  {
+   "id": "validate",
+   "lane": "lA",
+   "col": 4,
+   "type": "security",
+   "label": "Validation",
+   "sublabel": "source + time",
+   "width": 150
+  },
+  {
+   "id": "normalize",
+   "lane": "lA",
+   "col": 5,
+   "type": "backend",
+   "label": "Normalisation",
+   "sublabel": "case + dedupe",
+   "width": 155
+  },
+  {
+   "id": "correlate",
+   "lane": "lB",
+   "col": 0,
+   "type": "backend",
+   "label": "Correlation",
+   "sublabel": "actor + infra",
+   "width": 150
+  },
+  {
+   "id": "ttp",
+   "lane": "lB",
+   "col": 1,
+   "type": "backend",
+   "label": "TTP Mapping",
+   "sublabel": "behaviour evidence",
+   "width": 160
+  },
+  {
+   "id": "c2",
+   "lane": "lB",
+   "col": 2,
+   "type": "security",
+   "label": "C2 Analysis",
+   "sublabel": "passive metadata",
+   "width": 155
+  },
+  {
+   "id": "prop",
+   "lane": "lB",
+   "col": 3,
+   "type": "backend",
+   "label": "Propagation",
+   "sublabel": "attack chain",
+   "width": 150
+  },
+  {
+   "id": "report",
+   "lane": "lB",
+   "col": 4,
+   "type": "frontend",
+   "label": "Report",
+   "sublabel": "DOCX + PDF + IOC",
+   "width": 150
+  }
+ ],
+ "edges": [
+  {
+   "id": "e1",
+   "from": "scope",
+   "to": "actors",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e2",
+   "from": "actors",
+   "to": "osint",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e3",
+   "from": "osint",
+   "to": "ioc",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e4",
+   "from": "ioc",
+   "to": "validate",
+   "variant": "emphasis",
+   "label": "verify"
+  },
+  {
+   "id": "e5",
+   "from": "validate",
+   "to": "normalize",
+   "variant": "emphasis",
+   "label": "clean"
+  },
+  {
+   "id": "e6",
+   "from": "normalize",
+   "to": "correlate",
+   "variant": "emphasis",
+   "label": "correlate"
+  },
+  {
+   "id": "e7",
+   "from": "correlate",
+   "to": "ttp",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e8",
+   "from": "ttp",
+   "to": "c2",
+   "variant": "security"
+  },
+  {
+   "id": "e9",
+   "from": "c2",
+   "to": "prop",
+   "variant": "security"
+  },
+  {
+   "id": "e10",
+   "from": "prop",
+   "to": "report",
+   "variant": "emphasis",
+   "label": "publish"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "Evidence discipline",
+   "items": [
+    "Every technique row carries the exact authored sentence",
+    "Sources archived with retrieval dates"
+   ]
+  },
+  {
+   "dot": "rose",
+   "title": "Safety gate",
+   "items": [
+    "Passive collection only",
+    "No execution, no payload retrieval, no C2 contact"
+   ]
+  },
+  {
+   "dot": "emerald",
+   "title": "Traceability",
+   "items": [
+    "IOC rows keep source, first/last seen and confidence",
+    "Absent stages print as Not documented"
+   ]
+  }
+ ],
+ "semanticChecks": {
+  "requiredPaths": [
+   {
+    "from": "correlate",
+    "to": "report"
+   }
+  ]
+ }
+}

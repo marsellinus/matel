@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+figures/*.visual-check.*.png
+figures/*.browser-check.json
+figures/*.delivery.json
+figures/*.finalize.json
+figures/*.finalize-summary.json
+figures/*.delivery-pending.json
+figures/*.visual-check.json
+figures/*.visual-check.html
+figures/*.visual-check/
+figures/review-*/

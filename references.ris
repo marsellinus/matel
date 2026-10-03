@@ -1,0 +1,441 @@
+TY  - JOUR
+TI  - A Novel Approach for Cyber Threat Analysis Systems Using BERT Model from Cyber Threat Intelligence Data
+AU  - Doygun Demirol
+AU  - Resul Das
+AU  - Davut Hanbay
+PY  - 2025
+JO  - Symmetry
+VL  - 17
+IS  - 4
+SP  - 587
+DO  - 10.3390/sym17040587
+UR  - https://www.mdpi.com/2073-8994/17/4/587/pdf?version=1744384444
+ER  - 
+
+TY  - JOUR
+TI  - Systematically Integrating Cyber Threat Intelligence into Resilient Space-Cyber Architectures
+AU  - Chathura Abeydeera
+PY  - 2026
+JO  - European Conference on Cyber Warfare and Security
+VL  - 25
+IS  - 1
+SP  - 932-942
+DO  - 10.34190/eccws.25.1.4673
+UR  - https://papers.academic-conferences.org/index.php/eccws/article/download/4673/4392
+ER  - 
+
+TY  - JOUR
+TI  - ANALYZING SURICATA ALERT DETECTION PERFORMANCE ISSUES BASED ON ACTIVE INDICATOR OF COMPROMISE RULES
+AU  - Didit Hari Kuncoro Raharjo
+AU  - Muhammad Salman
+PY  - 2023
+JO  - Jurnal Teknik Informatika (Jutif)
+VL  - 4
+IS  - 3
+SP  - 601-610
+DO  - 10.52436/1.jutif.2023.4.3.1013
+UR  - https://jutif.if.unsoed.ac.id/index.php/jurnal/article/download/1013/319
+ER  - 
+
+TY  - JOUR
+TI  - Zero-Day Malware Detection and Effective Malware Analysis Using Shapley Ensemble Boosting and Bagging Approach
+AU  - Rajesh Kumar
+AU  - Geetha Subbiah
+PY  - 2022
+JO  - Sensors
+VL  - 22
+IS  - 7
+SP  - 2798
+DO  - 10.3390/s22072798
+UR  - https://www.mdpi.com/1424-8220/22/7/2798/pdf?version=1649413664
+ER  - 
+
+TY  - JOUR
+TI  - Leveraging deep learning and image conversion of executable files for effective malware detection: A static malware analysis approach
+AU  - Mesut Guven
+PY  - 2024
+JO  - AIMS Mathematics
+VL  - 9
+IS  - 6
+SP  - 15223-15245
+DO  - 10.3934/math.2024739
+UR  - http://www.aimspress.com/aimspress-data/math/2024/6/PDF/math-09-06-739.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Mapping Vulnerability Description to MITRE ATT&CK Framework by LLM
+AU  - Pasha Rafiey
+AU  - Amin Namadchian
+PY  - 2025
+JO  - Advances in Artificial Intelligence and Machine Learning
+VL  - 05
+IS  - 03
+SP  - 4379-4396
+DO  - 10.54364/aaiml.2025.53243
+UR  - https://doi.org/10.54364/aaiml.2025.53243
+ER  - 
+
+TY  - JOUR
+TI  - CVE2ATT&CK: BERT-Based Mapping of CVEs to MITRE ATT&CK Techniques
+AU  - Octavian Grigorescu
+AU  - Andreea Nica
+AU  - Mihai Dascalu
+AU  - Razvan Rughinis
+PY  - 2022
+JO  - Algorithms
+VL  - 15
+IS  - 9
+SP  - 314
+DO  - 10.3390/a15090314
+UR  - https://www.mdpi.com/1999-4893/15/9/314/pdf?version=1663861609
+ER  - 
+
+TY  - JOUR
+TI  - Threat Model for Hybrid Cloud-Edge Cyber-Physical Systems: Mapping STRIDE to MITRE ATT&CK for ICS
+AU  - Mieszko Cichon
+AU  - Andrzej Mycek
+AU  - Pawel Plawiak
+PY  - 2026
+JO  - Electronics
+VL  - 15
+IS  - 18
+SP  - 4097
+DO  - 10.3390/electronics15184097
+UR  - https://doi.org/10.3390/electronics15184097
+ER  - 
+
+TY  - JOUR
+TI  - Methodology for Collecting Data on the Activity of Malware for Windows OS Based on MITRE ATT&CK
+AU  - Danil Smirnov
+AU  - Oleg Evsutin
+PY  - 2024
+JO  - Informatics and Automation
+VL  - 23
+IS  - 3
+SP  - 642-683
+DO  - 10.15622/ia.23.3.2
+UR  - https://ia.spcras.ru/index.php/sp/article/download/16065/15359
+ER  - 
+
+TY  - JOUR
+TI  - Automated Mapping of Common Vulnerabilities and Exposures to MITRE ATT&CK Tactics
+AU  - Ioana Branescu
+AU  - Octavian Grigorescu
+AU  - Mihai Dascalu
+PY  - 2024
+JO  - Information
+VL  - 15
+IS  - 4
+SP  - 214
+DO  - 10.3390/info15040214
+UR  - https://www.mdpi.com/2078-2489/15/4/214/pdf?version=1712734456
+ER  - 
+
+TY  - JOUR
+TI  - Yara-Based Emotet Malware Scanner - A Factual Analysis
+AU  - Priya P Sajan
+PY  - 2024
+JO  - Communications on Applied Nonlinear Analysis
+VL  - 32
+IS  - 2s
+SP  - 202-213
+DO  - 10.52783/cana.v32.2266
+UR  - https://internationalpubls.com/index.php/cana/article/download/2266/1400
+ER  - 
+
+TY  - JOUR
+TI  - Malware Reverse Engineering to Find the Malicious Activity of Emotet
+AU  - Manohar Venkat G
+AU  - Saranya Chandran
+AU  - Arjun T U
+PY  - 2023
+JO  - Advances in Transdisciplinary Engineering
+DO  - 10.3233/atde221253
+UR  - https://ebooks.iospress.nl/pdf/doi/10.3233/ATDE221253
+ER  - 
+
+TY  - JOUR
+TI  - Malware: Detection and Defense
+AU  - Iyas Alodat
+PY  - 2023
+JO  - Malware - Detection and Defense
+DO  - 10.5772/intechopen.108434
+UR  - http://dx.doi.org/10.5772/intechopen.108434
+ER  - 
+
+TY  - JOUR
+TI  - ANALISIS DAN DETEKSI MALWARE PADA PROTOKOL JARINGAN MENGGUNAKAN METODE MALWARE ANALISIS DINAMIS DAN MALWARE ANALISIS STATIS
+AU  - Vicram Renondo Sianipar
+AU  - Hotma Pangaribuan
+PY  - 2023
+JO  - Computer and  Science Industrial Engineering (COMASIE)
+VL  - 9
+IS  - 6
+DO  - 10.33884/comasiejournal.v9i6.7833
+UR  - https://ejournal.upbatam.ac.id/index.php/comasiejournal/article/download/7833/3500
+ER  - 
+
+TY  - JOUR
+TI  - Deteksi Malware Dridex Menggunakan Signature-based Snort
+AU  - Adhitya Nugraha
+AU  - Dinda Aulia Gustian
+PY  - 2022
+JO  - Indonesian Journal of Computer Science
+VL  - 10
+IS  - 1
+DO  - 10.33022/ijcs.v10i1.3068
+UR  - http://ijcs.stmikindonesia.ac.id/ijcs/index.php/ijcs/article/download/3068/38
+ER  - 
+
+TY  - JOUR
+TI  - Analisa Metasploit Framework “msfvenom” Backdoor Trojan dan Fully Undetected (FUD) Trojan
+AU  - Mursalim Mursalim
+AU  - Wachid Darmawan
+AU  - Tresi Aprilia
+PY  - 2024
+JO  - Techno.Com
+VL  - 23
+IS  - 1
+SP  - 112-124
+DO  - 10.62411/tc.v23i1.9741
+UR  - https://publikasi.dinus.ac.id/index.php/technoc/article/download/9741/4336
+ER  - 
+
+TY  - JOUR
+TI  - Threat Actor Attribution Applying a Tactics-Techniques-Procedures Approach: An Empirical Investigation
+AU  - Shaheen Hussain
+AU  - Krassie Petrova
+PY  - 2026
+JO  - Future Internet
+VL  - 18
+IS  - 8
+SP  - 433
+DO  - 10.3390/fi18080433
+UR  - https://doi.org/10.3390/fi18080433
+ER  - 
+
+TY  - JOUR
+TI  - A Bounded Threat-Actor-Conditioned Cyber Risk Assessment Framework for Networked Systems Under Data-Scarce Conditions
+AU  - Victor Zhora
+AU  - Anatolii Antoniuk
+AU  - Sergii Matvieiev
+AU  - Volodymyr Artemchuk
+PY  - 2026
+JO  - Computers
+VL  - 15
+IS  - 10
+SP  - 649
+DO  - 10.3390/computers15100649
+UR  - https://doi.org/10.3390/computers15100649
+ER  - 
+
+TY  - JOUR
+TI  - Data-Driven Clustering of Malicious Actor Profiles Based on Machine Learning Analysis of Attack Patterns in Cyber-Threat Intelligence Feeds
+AU  - Ehtsham Irshad
+AU  - Sidra Nawaz
+AU  - Abdul Basit Siddiqui
+PY  - 2026
+JO  - AI, Computer Science and Robotics Technology
+VL  - 5
+DO  - 10.5772/acrt.20250160
+UR  - https://cdnintech.com/articles/1027/1788166462-738857750/acrt20250160-r22026-08-31%2010%3A43%3A34.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Private Investigation and Open Source INTelligence (OSINT)
+AU  - Francisco José Cesteros Garcia
+PY  - 2021
+JO  - Cybersecurity Threats with New Perspectives
+DO  - 10.5772/intechopen.95857
+UR  - https://www.intechopen.com/citation-pdf-url/74986
+ER  - 
+
+TY  - JOUR
+TI  - Cybersecurity Threat Hunting and Vulnerability Analysis Using a Neo4j Graph Database of Open Source Intelligence
+AU  - Elijah Pelofske
+AU  - Lorie M. Liebrock
+AU  - Vincent Urias
+PY  - 2026
+JO  - Digital Threats: Research and Practice
+SP  - 3822596
+DO  - 10.1145/3822596
+UR  - https://doi.org/10.1145/3822596
+ER  - 
+
+TY  - JOUR
+TI  - Open source intelligence
+AU  - Isabelle Bohm
+AU  - Samuel Lolagar
+PY  - 2021
+JO  - International Cybersecurity Law Review
+VL  - 2
+IS  - 2
+SP  - 317-337
+DO  - 10.1365/s43439-021-00042-7
+UR  - https://link.springer.com/content/pdf/10.1365/s43439-021-00042-7.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Role of Open Source Intelligence (OSINT) in Cybersecurity and Threat Analysis
+AU  - Ernest O. Nonum
+AU  - Oghenetega Avwokuruaye
+AU  - Tochukwu M. Ezemonye
+PY  - 2025
+JO  - International Journal of Latest Technology in Engineering Management & Applied Science
+VL  - 14
+IS  - 3
+SP  - 189-200
+DO  - 10.51583/ijltemas.2025.140300023
+UR  - https://doi.org/10.51583/ijltemas.2025.140300023
+ER  - 
+
+TY  - JOUR
+TI  - Cybersecurity Education Strategies Based on Open-Source Intelligence (OSINT) to Enhance Public Awareness
+AU  - Taufik Hidayat
+AU  - Budi Wibowo
+AU  - Andrie Yuswanto
+AU  - Annisa Fathul Jannah
+PY  - 2025
+JO  - International Journal of Science Education and Cultural Studies
+VL  - 4
+IS  - 2
+SP  - 1-9
+DO  - 10.58291/ijsecs.v4i2.422
+UR  - https://ejournal.sultanpublisher.com/index.php/ijsecs/article/download/422/303
+ER  - 
+
+TY  - JOUR
+TI  - A Web Semantic Mining Method for Fake Cybersecurity Threat Intelligence in Open Source Communities
+AU  - Zhihua Li
+AU  - Xinye Yu
+AU  - Yukai Zhao
+PY  - 2024
+JO  - International Journal on Semantic Web and Information Systems
+VL  - 20
+IS  - 1
+SP  - 1-22
+DO  - 10.4018/ijswis.350095
+UR  - https://doi.org/10.4018/ijswis.350095
+ER  - 
+
+TY  - JOUR
+TI  - BlockIntelChain: a blockchain-based cyber threat intelligence sharing architecture
+AU  - Alaa Tolah
+PY  - 2025
+JO  - Scientific Reports
+VL  - 16
+IS  - 1
+SP  - 190
+DO  - 10.1038/s41598-025-29152-6
+UR  - https://www.nature.com/articles/s41598-025-29152-6_reference.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Promoting research on cyber threat intelligence sharing in ecosystems
+AU  - Chon Abraham
+AU  - France Bélanger
+AU  - Sally Daultrey
+PY  - 2025
+JO  - Journal of Cybersecurity
+VL  - 11
+IS  - 1
+SP  - tyaf016
+DO  - 10.1093/cybsec/tyaf016
+UR  - https://doi.org/10.1093/cybsec/tyaf016
+ER  - 
+
+TY  - JOUR
+TI  - Context-Aware Cyber Threat Intelligence Exchange Platform
+AU  - Michael Motlhabi
+AU  - Phumeza Pantsi
+AU  - Bokang Mangoale
+AU  - Rofhiwa Netshiya
+AU  - Samson Chishiri
+PY  - 2022
+JO  - International Conference on Cyber Warfare and Security
+VL  - 17
+IS  - 1
+SP  - 201-210
+DO  - 10.34190/iccws.17.1.42
+UR  - https://papers.academic-conferences.org/index.php/iccws/article/download/42/27
+ER  - 
+
+TY  - JOUR
+TI  - AI-Driven Threat Intelligence: Evaluating Machine Learning for Real-Time Cyber Threat Sharing Among U.S. National Security Agencies
+AU  - Mohammed Nazmul Islam Miah
+AU  - Md Joshim Uddin
+AU  - Md Wasim Ahmed
+PY  - 2025
+JO  - Journal of Computer Science and Technology Studies
+VL  - 7
+IS  - 8
+SP  - 300-313
+DO  - 10.32996/jcsts.2025.7.8.34
+UR  - https://al-kindipublisher.com/index.php/jcsts/article/download/10486/9261
+ER  - 
+
+TY  - JOUR
+TI  - Malware Detection Using Static Feature Analysis and Deep Learning Techniques
+AU  - Saima Akbar
+AU  - Tamim Khan
+PY  - 2025
+JO  - Information Technology and Control
+VL  - 54
+IS  - 4
+SP  - 1358-1382
+DO  - 10.5755/j01.itc.54.4.35472
+UR  - https://itc.ktu.lt/index.php/ITC/article/download/35472/17759
+ER  - 
+
+TY  - JOUR
+TI  - Large-Scale Analysis on Anti-Analysis Techniques in Real-World Malware
+AU  - Minho Kim
+AU  - Haehyun Cho
+AU  - Jeong Hyun Yi
+PY  - 2022
+JO  - IEEE Access
+VL  - 10
+SP  - 75802-75815
+DO  - 10.1109/access.2022.3190978
+UR  - https://ieeexplore.ieee.org/ielx7/6287639/6514899/09829724.pdf
+ER  - 
+
+TY  - JOUR
+TI  - Botnet Defense System: Observability, Controllability, and Basic Command and Control Strategy
+AU  - Shingo Yamaguchi
+PY  - 2022
+JO  - Sensors
+VL  - 22
+IS  - 23
+SP  - 9423
+DO  - 10.3390/s22239423
+UR  - https://www.mdpi.com/1424-8220/22/23/9423/pdf?version=1669974647
+ER  - 
+
+TY  - JOUR
+TI  - Sharing Machine Learning Models as Indicators of Compromise for Cyber Threat Intelligence
+AU  - Davy Preuveneers
+AU  - Wouter Joosen
+PY  - 2021
+JO  - Journal of Cybersecurity and Privacy
+VL  - 1
+IS  - 1
+SP  - 140-163
+DO  - 10.3390/jcp1010008
+UR  - https://www.mdpi.com/2624-800X/1/1/8/pdf?version=1616163701
+ER  - 
+
+TY  - JOUR
+TI  - Assessing MITRE ATT&CK Risk Using a Cyber-Security Culture Framework
+AU  - Anna Georgiadou
+AU  - Spiros Mouzakitis
+AU  - Dimitris Askounis
+PY  - 2021
+JO  - Sensors
+VL  - 21
+IS  - 9
+SP  - 3267
+DO  - 10.3390/s21093267
+UR  - https://www.mdpi.com/1424-8220/21/9/3267/pdf?version=1620550566
+ER  - 
+

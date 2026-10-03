@@ -1,0 +1,242 @@
+[
+ {
+  "id": "A02",
+  "doi": "10.3390/sym17040587",
+  "expect_title": "A Novel Approach for Cyber Threat Analysis Systems Using BERT Model from Cyber Threat Intelligence Data",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A05",
+  "doi": "10.34190/eccws.25.1.4673",
+  "expect_title": "Systematically Integrating Cyber Threat Intelligence into Resilient Space-Cyber Architectures",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A07",
+  "doi": "10.52436/1.jutif.2023.4.3.1013",
+  "expect_title": "ANALYZING SURICATA ALERT DETECTION PERFORMANCE ISSUES BASED ON ACTIVE INDICATOR OF COMPROMISE RULES",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A08",
+  "doi": "10.3390/s22072798",
+  "expect_title": "Zero-Day Malware Detection and Effective Malware Analysis Using Shapley Ensemble Boosting and Bagging Approach",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A10",
+  "doi": "10.3934/math.2024739",
+  "expect_title": "Leveraging deep learning and image conversion of executable files for effective malware detection: A static malware analysis approach",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A13",
+  "doi": "10.54364/aaiml.2025.53243",
+  "expect_title": "Mapping Vulnerability Description to MITRE ATT&amp;CK Framework by LLM",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A14",
+  "doi": "10.3390/a15090314",
+  "expect_title": "CVE2ATT&amp;CK: BERT-Based Mapping of CVEs to MITRE ATT&amp;CK Techniques",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A15",
+  "doi": "10.3390/electronics15184097",
+  "expect_title": "Threat Model for Hybrid Cloud\u2013Edge Cyber\u2013Physical Systems: Mapping STRIDE to MITRE ATT&amp;CK for ICS",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A16",
+  "doi": "10.15622/ia.23.3.2",
+  "expect_title": "Methodology for Collecting Data on the Activity of Malware for Windows OS Based on MITRE ATT&amp;CK",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A17",
+  "doi": "10.3390/info15040214",
+  "expect_title": "Automated Mapping of Common Vulnerabilities and Exposures to MITRE ATT&amp;CK Tactics",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A18",
+  "doi": "10.52783/cana.v32.2266",
+  "expect_title": "Yara-Based Emotet Malware Scanner \u2013 A Factual Analysis",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A20",
+  "doi": "10.3233/atde221253",
+  "expect_title": "Malware Reverse Engineering to Find the Malicious Activity of Emotet",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A22",
+  "doi": "10.5772/intechopen.108434",
+  "expect_title": "Malware: Detection and Defense",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A23",
+  "doi": "10.33884/comasiejournal.v9i6.7833",
+  "expect_title": "ANALISIS DAN DETEKSI MALWARE PADA PROTOKOL JARINGAN MENGGUNAKAN METODE MALWARE ANALISIS DINAMIS DAN MALWARE ANALISIS STATIS",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A25",
+  "doi": "10.33022/ijcs.v10i1.3068",
+  "expect_title": "Deteksi Malware Dridex Menggunakan Signature-based Snort",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A30",
+  "doi": "10.62411/tc.v23i1.9741",
+  "expect_title": "Analisa Metasploit Framework \u201cmsfvenom\u201d Backdoor Trojan dan Fully Undetected (FUD) Trojan",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A33",
+  "doi": "10.3390/fi18080433",
+  "expect_title": "Threat Actor Attribution Applying a Tactics\u2013Techniques\u2013Procedures Approach: An Empirical Investigation",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A34",
+  "doi": "10.3390/computers15100649",
+  "expect_title": "A Bounded Threat\u2013Actor-Conditioned Cyber Risk Assessment Framework for Networked Systems Under Data-Scarce Conditions",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A36",
+  "doi": "10.5772/acrt.20250160",
+  "expect_title": "Data-Driven Clustering of Malicious Actor Profiles Based on Machine Learning Analysis of Attack Patterns in Cyber-Threat Intelligence Feeds",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A41",
+  "doi": "10.5772/intechopen.95857",
+  "expect_title": "Private Investigation and Open Source INTelligence (OSINT)",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A42",
+  "doi": "10.1145/3822596",
+  "expect_title": "Cybersecurity Threat Hunting and Vulnerability Analysis Using a Neo4j Graph Database of Open Source Intelligence",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A43",
+  "doi": "10.1365/s43439-021-00042-7",
+  "expect_title": "Open source intelligence",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A44",
+  "doi": "10.51583/ijltemas.2025.140300023",
+  "expect_title": "Role of Open Source Intelligence (OSINT) in Cybersecurity and Threat Analysis",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A45",
+  "doi": "10.58291/ijsecs.v4i2.422",
+  "expect_title": "Cybersecurity Education Strategies Based on Open-Source Intelligence (OSINT) to Enhance Public Awareness",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "A46",
+  "doi": "10.4018/ijswis.350095",
+  "expect_title": "A Web Semantic Mining Method for Fake Cybersecurity Threat Intelligence in Open Source Communities",
+  "topic": "cyber threat intelligence"
+ },
+ {
+  "id": "B01",
+  "doi": "10.1038/s41598-025-29152-6",
+  "expect_title": "BlockIntelChain: a blockchain-based cyber threat intelligence sharing architecture",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B02",
+  "doi": "10.1093/cybsec/tyaf016",
+  "expect_title": "Promoting research on cyber threat intelligence sharing in ecosystems",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B03",
+  "doi": "10.1007/s43674-023-00057-z",
+  "expect_title": "A survey on cyber threat intelligence sharing based on Blockchain",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B04",
+  "doi": "10.34190/iccws.17.1.42",
+  "expect_title": "Context-Aware Cyber Threat Intelligence Exchange Platform",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B05",
+  "doi": "10.32996/jcsts.2025.7.8.34",
+  "expect_title": "AI-Driven Threat Intelligence: Evaluating Machine Learning for Real-Time Cyber Threat Sharing Among U.S. National Security Agencies",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B06",
+  "doi": "10.1007/s10207-025-01059-3",
+  "expect_title": "Cultivating skilled malware analysts: Clarification of practical malware dynamic analysis through interviews",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B07",
+  "doi": "10.5755/j01.itc.54.4.35472",
+  "expect_title": "Malware Detection Using Static Feature Analysis and Deep Learning Techniques",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B08",
+  "doi": "10.1109/access.2022.3190978",
+  "expect_title": "Large-Scale Analysis on Anti-Analysis Techniques in Real-World Malware",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B09",
+  "doi": "10.52783/cana.v32.2266",
+  "expect_title": "Yara-Based Emotet Malware Scanner \u2013 A Factual Analysis",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B10",
+  "doi": "10.3390/s22239423",
+  "expect_title": "Botnet Defense System: Observability, Controllability, and Basic Command and Control Strategy",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B11",
+  "doi": "10.3390/jcp1010008",
+  "expect_title": "Sharing Machine Learning Models as Indicators of Compromise for Cyber Threat Intelligence",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B12",
+  "doi": "10.1093/comjnl/bxag078",
+  "expect_title": "Gated recurrent unit-based expiration time prediction for indicators of compromise in cyber threat intelligence",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B13",
+  "doi": "10.3390/s21093267",
+  "expect_title": "Assessing MITRE ATT&amp;CK Risk Using a Cyber-Security Culture Framework",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B14",
+  "doi": "10.1016/j.cose.2026.105042",
+  "expect_title": "Investigating co-occurrences of MITRE ATT&amp;CK techniques",
+  "topic": "gap-fill"
+ },
+ {
+  "id": "B15",
+  "doi": "10.1016/j.cose.2026.105085",
+  "expect_title": "Cyber Kill Web: Graph analytics for security telemetry aligned with MITRE ATT&amp;CK\u00ae and reproducible evaluation",
+  "topic": "gap-fill"
+ }
+]

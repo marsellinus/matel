@@ -1,0 +1,211 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "MATEL IOC Collection and Normalisation Pipeline",
+    "subtitle": "Sources: CISA AA19-339A advisory, abuse.ch Feodo Tracker",
+    "output": "figures/ioc-pipeline.html",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "animation": "none"
+  },
+  "lanes": [
+    {
+      "id": "l1",
+      "label": "IOC Intake and Normalisation"
+    },
+    {
+      "id": "l2",
+      "label": "Persistent Store and Analysis"
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "label": "Collection and validation",
+      "fromCol": 0,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "p2",
+      "label": "Normalisation and analysis",
+      "fromCol": 4,
+      "toCol": 5,
+      "variant": "emphasis"
+    }
+  ],
+  "mainPath": [
+    "otx",
+    "advisory",
+    "collect",
+    "validate",
+    "normalise",
+    "dedupe"
+  ],
+  "nodes": [
+    {
+      "id": "otx",
+      "lane": "l1",
+      "col": 0,
+      "type": "cloud",
+      "label": "OTX / CISA",
+      "sublabel": "external feed"
+    },
+    {
+      "id": "advisory",
+      "lane": "l1",
+      "col": 1,
+      "type": "external",
+      "label": "CISA AA19-339A",
+      "sublabel": "source repository"
+    },
+    {
+      "id": "collect",
+      "lane": "l1",
+      "col": 2,
+      "type": "external",
+      "label": "IOC Collection",
+      "sublabel": "fetch + parse"
+    },
+    {
+      "id": "validate",
+      "lane": "l1",
+      "col": 3,
+      "type": "security",
+      "label": "Validation",
+      "sublabel": "source + timestamp"
+    },
+    {
+      "id": "normalise",
+      "lane": "l1",
+      "col": 4,
+      "type": "backend",
+      "label": "Normalisation",
+      "sublabel": "lowercase + dedupe"
+    },
+    {
+      "id": "dedupe",
+      "lane": "l1",
+      "col": 5,
+      "type": "backend",
+      "label": "Deduplication",
+      "sublabel": "remove repeats"
+    },
+    {
+      "id": "database",
+      "lane": "l2",
+      "col": 0,
+      "type": "database",
+      "label": "IOC Database",
+      "sublabel": "ioc/all_ioc_normalized.csv",
+      "width": 200
+    },
+    {
+      "id": "analysis",
+      "lane": "l2",
+      "col": 1,
+      "type": "backend",
+      "label": "Threat Analysis",
+      "sublabel": "actor + campaign",
+      "width": 130
+    },
+    {
+      "id": "output",
+      "lane": "l2",
+      "col": 2,
+      "type": "backend",
+      "label": "Report Output",
+      "sublabel": "DOCX + PDF"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "otx",
+      "to": "advisory",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e2",
+      "from": "advisory",
+      "to": "collect",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e3",
+      "from": "collect",
+      "to": "validate",
+      "variant": "emphasis",
+      "label": "verify"
+    },
+    {
+      "id": "e4",
+      "from": "validate",
+      "to": "normalise",
+      "variant": "emphasis",
+      "label": "clean"
+    },
+    {
+      "id": "e5",
+      "from": "normalise",
+      "to": "dedupe",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e6",
+      "from": "dedupe",
+      "to": "database",
+      "variant": "emphasis",
+      "label": "persist"
+    },
+    {
+      "id": "e7",
+      "from": "database",
+      "to": "analysis",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e8",
+      "from": "analysis",
+      "to": "output",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Normalisation rules",
+      "items": [
+        "Lowercase domain",
+        "Standardise URL",
+        "Validate hash length",
+        "Drop duplicates",
+        "Preserve original IOC value"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Provenance",
+      "items": [
+        "Source column kept per row",
+        "first_seen and last_seen preserved",
+        "Confidence High unless source quality is lower"
+      ]
+    }
+  ],
+  "semanticChecks": {
+    "allowedRoots": [
+      "otx"
+    ],
+    "allowedTerminals": [
+      "output"
+    ],
+    "requiredPaths": [
+      {
+        "from": "database",
+        "to": "output"
+      }
+    ]
+  }
+}

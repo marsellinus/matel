@@ -1,0 +1,457 @@
+{
+  "_meta": {
+    "purpose": "MATEL TTP mapping evidence base. Every row is a technique asserted by the cited authority.",
+    "sources": [
+      "MITRE ATT&CK S0367 (Emotet) - https://attack.mitre.org/software/S0367/",
+      "MITRE ATT&CK S0384 (Dridex) - https://attack.mitre.org/software/S0384/",
+      "MITRE ATT&CK G0092 (TA505) - https://attack.mitre.org/groups/G0092/",
+      "MITRE ATT&CK G0037 (FIN6) - https://attack.mitre.org/groups/G0037/",
+      "CISA AA19-339A (Dridex Malware) - https://www.cisa.gov/news-events/cybersecurity-advisories/aa19-339a"
+    ],
+    "evidence_class": "Documented = stated on the MITRE software/group page or in the advisory text; Reported = attributed via the group's technique list sourcing vendor reporting; Inferred = analyst synthesis with no direct single-source sentence.",
+    "note": "MITRE ATT&CK Enterprise technique identifiers as published 2026."
+  },
+  "actors": {
+    "TA542": {
+      "alias": "Mummy Spider, Gold Crestwood, Mealybug",
+      "malware": ["Emotet"],
+      "mitre_software": ["S0367"],
+      "sources": ["https://attack.mitre.org/software/S0367/"]
+    },
+    "TA505": {
+      "alias": "Hive0065, Spandex Tempest, CHIMBORAZO, Evil Corp overlap",
+      "malware": ["Dridex", "Locky", "Clop", "ServHelper", "FlawedAmmyy", "SDBbot"],
+      "mitre_group": ["G0092"],
+      "mitre_software": ["S0384", "S0382", "S0383", "S0461"],
+      "sources": ["https://attack.mitre.org/groups/G0092/", "https://attack.mitre.org/software/S0384/"]
+    },
+    "FIN6": {
+      "alias": "Skeleton Spider, ITG08, Gold Franklin, Magecart Group 6, TAAL, Camouflage Tempest",
+      "malware": ["FrameworkPOS", "More_eggs", "HARDTACK", "SHIPBREAD", "LockerGoga", "Ryuk"],
+      "mitre_group": ["G0037"],
+      "sources": ["https://attack.mitre.org/groups/G0037/"]
+    }
+  },
+  "ttp": [
+    {
+      "actor": "TA542", "tactic": "Initial Access", "technique_id": "T1566.001",
+      "technique": "Phishing: Spearphishing Attachment",
+      "evidence": "Emotet has been delivered by phishing emails containing attachments.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Initial Access", "technique_id": "T1566.002",
+      "technique": "Phishing: Spearphishing Link",
+      "evidence": "Emotet has been delivered by phishing emails containing links.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Execution", "technique_id": "T1204.001",
+      "technique": "User Execution: Malicious Link",
+      "evidence": "Emotet has relied upon users clicking on a malicious link delivered through spearphishing.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Execution", "technique_id": "T1204.002",
+      "technique": "User Execution: Malicious File",
+      "evidence": "Emotet has relied upon users clicking on a malicious attachment delivered through spearphishing.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Execution", "technique_id": "T1059.005",
+      "technique": "Command and Scripting Interpreter: Visual Basic",
+      "evidence": "Emotet has sent Microsoft Word documents with embedded macros that will invoke scripts to download additional payloads.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Execution", "technique_id": "T1059.001",
+      "technique": "Command and Scripting Interpreter: PowerShell",
+      "evidence": "Emotet has used PowerShell to retrieve the malicious payload and download additional resources such as Mimikatz.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Execution", "technique_id": "T1047",
+      "technique": "Windows Management Instrumentation",
+      "evidence": "Emotet has used WMI to execute powershell.exe.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Persistence", "technique_id": "T1547.001",
+      "technique": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+      "evidence": "Emotet has been observed adding the downloaded payload to HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Persistence", "technique_id": "T1543.003",
+      "technique": "Create or Modify System Process: Windows Service",
+      "evidence": "Emotet has been observed creating new services to maintain persistence.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Persistence", "technique_id": "T1053.005",
+      "technique": "Scheduled Task/Job: Scheduled Task",
+      "evidence": "Emotet has maintained persistence through a scheduled task, e.g. through a .dll file in the Registry.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Defense Evasion", "technique_id": "T1027.002",
+      "technique": "Obfuscated Files or Information: Software Packing",
+      "evidence": "Emotet has used custom packers to protect its payloads.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Defense Evasion", "technique_id": "T1027.001",
+      "technique": "Obfuscated Files or Information: Binary Padding",
+      "evidence": "Emotet inflates malicious files and malware as an evasion technique.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Defense Evasion", "technique_id": "T1218.010",
+      "technique": "System Binary Proxy Execution: Regsvr32",
+      "evidence": "Emotet uses RegSvr32 to execute the DLL payload.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Defense Evasion", "technique_id": "T1055.012",
+      "technique": "Process Injection: Process Hollowing",
+      "evidence": "Emotet uses a copy of certutil.exe stored in a temporary directory for process hollowing.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Defense Evasion", "technique_id": "T1036.004",
+      "technique": "Masquerading: Masquerade Task or Service",
+      "evidence": "Emotet installed itself as service name 'Windows Defender System Service' with display name 'WinDefService'.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Credential Access", "technique_id": "T1555.003",
+      "technique": "Credentials from Password Stores: Credentials from Web Browsers",
+      "evidence": "Emotet has been observed dropping browser password grabber modules.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Credential Access", "technique_id": "T1003.001",
+      "technique": "OS Credential Dumping: LSASS Memory",
+      "evidence": "Emotet has been observed dropping and executing password grabber modules including Mimikatz.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Discovery", "technique_id": "T1135",
+      "technique": "Network Share Discovery",
+      "evidence": "Emotet has enumerated non-hidden network shares using WNetEnumResourceW.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Discovery", "technique_id": "T1016.002",
+      "technique": "System Network Configuration Discovery: Wi-Fi Discovery",
+      "evidence": "Emotet can extract names of all locally reachable Wi-Fi networks and brute-force them to spread.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Lateral Movement", "technique_id": "T1021.002",
+      "technique": "Remote Services: SMB/Windows Admin Shares",
+      "evidence": "Emotet has leveraged the Admin$, C$, and IPC$ shares for lateral movement.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Lateral Movement", "technique_id": "T1210",
+      "technique": "Exploitation of Remote Services",
+      "evidence": "Emotet has been seen exploiting SMB via EternalBlue (MS17-010) to achieve lateral movement and propagation.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Command and Control", "technique_id": "T1071.001",
+      "technique": "Application Layer Protocol: Web Protocols",
+      "evidence": "Emotet has used HTTP for command and control.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Command and Control", "technique_id": "T1571",
+      "technique": "Non-Standard Port",
+      "evidence": "Emotet has used HTTP over ports such as 20, 22, 443, 7080 and 50000.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Command and Control", "technique_id": "T1573.001",
+      "technique": "Encrypted Channel: Symmetric Cryptography",
+      "evidence": "Emotet is known to use RSA keys for encrypting C2 traffic; data is encrypted before sending to the C2 server.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Command and Control", "technique_id": "T1132.001",
+      "technique": "Data Encoding: Standard Encoding",
+      "evidence": "Emotet has used Google Protobufs to serialize C2 data and Base64 to encode data before sending to the C2 server.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA542", "tactic": "Exfiltration", "technique_id": "T1041",
+      "technique": "Exfiltration Over C2 Channel",
+      "evidence": "Emotet has exfiltrated data over its C2 channel.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0367"
+    },
+    {
+      "actor": "TA505", "tactic": "Resource Development", "technique_id": "T1583.001",
+      "technique": "Acquire Infrastructure: Domains",
+      "evidence": "TA505 has registered domains to impersonate services such as Dropbox to distribute malware.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Resource Development", "technique_id": "T1588.002",
+      "technique": "Obtain Capabilities: Tool",
+      "evidence": "TA505 has used AdFind, BloodHound, Mimikatz and PowerSploit in their operations.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Initial Access", "technique_id": "T1566.001",
+      "technique": "Phishing: Spearphishing Attachment",
+      "evidence": "TA505 has used spearphishing emails with malicious attachments to initially compromise victims.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Initial Access", "technique_id": "T1566.002",
+      "technique": "Phishing: Spearphishing Link",
+      "evidence": "TA505 has sent spearphishing emails containing malicious links.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Execution", "technique_id": "T1204.002",
+      "technique": "User Execution: Malicious File",
+      "evidence": "TA505 has used lures to get users to enable content in malicious attachments and execute malicious files contained in archives.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Execution", "technique_id": "T1059.005",
+      "technique": "Command and Scripting Interpreter: Visual Basic",
+      "evidence": "TA505 has used VBS for code execution.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Execution", "technique_id": "T1059.007",
+      "technique": "Command and Scripting Interpreter: JavaScript",
+      "evidence": "TA505 has used JavaScript for code execution.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Execution", "technique_id": "T1059.001",
+      "technique": "Command and Scripting Interpreter: PowerShell",
+      "evidence": "TA505 has used PowerShell to download and execute malware and reconnaissance scripts.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Defense Evasion", "technique_id": "T1218.011",
+      "technique": "System Binary Proxy Execution: Rundll32",
+      "evidence": "TA505 has leveraged rundll32.exe to execute malicious DLLs.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Defense Evasion", "technique_id": "T1218.007",
+      "technique": "System Binary Proxy Execution: Msiexec",
+      "evidence": "TA505 has used msiexec to download and execute malicious Windows Installer files.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Defense Evasion", "technique_id": "T1553.002",
+      "technique": "Subvert Trust Controls: Code Signing",
+      "evidence": "TA505 has signed payloads with code signing certificates from Thawte and Sectigo.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Defense Evasion", "technique_id": "T1027.002",
+      "technique": "Obfuscated Files or Information: Software Packing",
+      "evidence": "TA505 has used UPX to obscure malicious code.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Defense Evasion", "technique_id": "T1685",
+      "technique": "Disable or Modify Tools",
+      "evidence": "TA505 has used malware to disable Windows Defender.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Credential Access", "technique_id": "T1555.003",
+      "technique": "Credentials from Password Stores: Credentials from Web Browsers",
+      "evidence": "TA505 has used malware to gather credentials from Internet Explorer.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Credential Access", "technique_id": "T1552.001",
+      "technique": "Unsecured Credentials: Credentials In Files",
+      "evidence": "TA505 has used malware to gather credentials from FTP clients and Outlook.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Discovery", "technique_id": "T1069",
+      "technique": "Permission Groups Discovery",
+      "evidence": "TA505 has used TinyMet to enumerate members of privileged groups and has run 'net group /domain'.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Lateral Movement", "technique_id": "T1078.002",
+      "technique": "Valid Accounts: Domain Accounts",
+      "evidence": "TA505 has used stolen domain admin accounts to compromise additional hosts.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Command and Control", "technique_id": "T1071.001",
+      "technique": "Application Layer Protocol: Web Protocols",
+      "evidence": "TA505 has used HTTP to communicate with C2 nodes.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Command and Control", "technique_id": "T1568.001",
+      "technique": "Dynamic Resolution: Fast Flux DNS",
+      "evidence": "TA505 has used fast flux to mask botnets by distributing payloads across multiple IPs.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "TA505", "tactic": "Command and Control", "technique_id": "T1090",
+      "technique": "Proxy",
+      "evidence": "Dridex contains a backconnect module for tunneling traffic through a victim; infected computers join a P2P botnet relaying C2 traffic.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0384"
+    },
+    {
+      "actor": "TA505", "tactic": "Command and Control", "technique_id": "T1573.001",
+      "technique": "Encrypted Channel: Symmetric Cryptography",
+      "evidence": "Dridex has encrypted traffic with RC4.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK S0384"
+    },
+    {
+      "actor": "TA505", "tactic": "Impact", "technique_id": "T1486",
+      "technique": "Data Encrypted for Impact",
+      "evidence": "TA505 has used ransomware such as Clop, Locky, Jaff, Bart, Philadelphia and GlobeImposter to encrypt victim files.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0092"
+    },
+    {
+      "actor": "FIN6", "tactic": "Initial Access", "technique_id": "T1566.003",
+      "technique": "Phishing: Spearphishing via Service",
+      "evidence": "FIN6 has used fake job advertisements sent via LinkedIn to spearphish targets.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Initial Access", "technique_id": "T1566.001",
+      "technique": "Phishing: Spearphishing Attachment",
+      "evidence": "FIN6 has targeted victims with e-mails containing malicious attachments.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Execution", "technique_id": "T1204.002",
+      "technique": "User Execution: Malicious File",
+      "evidence": "FIN6 has used malicious documents to lure victims into allowing execution of PowerShell scripts.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Execution", "technique_id": "T1059.001",
+      "technique": "Command and Scripting Interpreter: PowerShell",
+      "evidence": "FIN6 has used PowerShell to gain access to merchant networks and to download and execute shellcode.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Execution", "technique_id": "T1047",
+      "technique": "Windows Management Instrumentation",
+      "evidence": "FIN6 has used WMI to automate the remote execution of PowerShell scripts.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Persistence", "technique_id": "T1547.001",
+      "technique": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+      "evidence": "FIN6 has used Registry Run keys to establish persistence for its downloader tools HARDTACK and SHIPBREAD.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Persistence", "technique_id": "T1053.005",
+      "technique": "Scheduled Task/Job: Scheduled Task",
+      "evidence": "FIN6 has used scheduled tasks to establish persistence for HARDTACK, SHIPBREAD and FrameworkPOS.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Privilege Escalation", "technique_id": "T1068",
+      "technique": "Exploitation for Privilege Escalation",
+      "evidence": "FIN6 tools targeted CVE-2013-3660, CVE-2011-2005 and CVE-2010-4398 to reach kernel-level privileges.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Defense Evasion", "technique_id": "T1036.004",
+      "technique": "Masquerading: Masquerade Task or Service",
+      "evidence": "FIN6 renamed the psexec service name to 'mstdc' to masquerade as a legitimate Windows service.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Defense Evasion", "technique_id": "T1070.004",
+      "technique": "Indicator Removal: File Deletion",
+      "evidence": "FIN6 has removed files from victim machines.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Credential Access", "technique_id": "T1003.001",
+      "technique": "OS Credential Dumping: LSASS Memory",
+      "evidence": "FIN6 has used Windows Credential Editor for credential dumping.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Credential Access", "technique_id": "T1003.003",
+      "technique": "OS Credential Dumping: NTDS",
+      "evidence": "FIN6 used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Discovery", "technique_id": "T1018",
+      "technique": "Remote System Discovery",
+      "evidence": "FIN6 used publicly available tools including osql.exe to map the internal network and reconnoitre AD, SQL servers and NetBIOS.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Discovery", "technique_id": "T1046",
+      "technique": "Network Service Discovery",
+      "evidence": "FIN6 mapped the internal network and conducted reconnaissance against Active Directory, SQL servers and NetBIOS.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Lateral Movement", "technique_id": "T1021.001",
+      "technique": "Remote Services: Remote Desktop Protocol",
+      "evidence": "FIN6 used RDP to move laterally in victim networks.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Lateral Movement", "technique_id": "T1078",
+      "technique": "Valid Accounts",
+      "evidence": "To move laterally, FIN6 used credentials stolen from various systems on which it gathered usernames and password hashes.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Collection", "technique_id": "T1005",
+      "technique": "Data from Local System",
+      "evidence": "FIN6 has collected and exfiltrated payment card data from compromised systems.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Collection", "technique_id": "T1119",
+      "technique": "Automated Collection",
+      "evidence": "FIN6 used a script to iterate through compromised PoS systems, copy and remove data to a log file, and bind to the submit-payment button event.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Command and Control", "technique_id": "T1572",
+      "technique": "Protocol Tunneling",
+      "evidence": "FIN6 used the Plink command-line utility to create SSH tunnels to C2 servers.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Command and Control", "technique_id": "T1095",
+      "technique": "Non-Application Layer Protocol",
+      "evidence": "FIN6 has used Metasploit Bind and Reverse TCP stagers.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Command and Control", "technique_id": "T1102",
+      "technique": "Web Service",
+      "evidence": "FIN6 has used Pastebin and Google Storage to host content for their operations.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    },
+    {
+      "actor": "FIN6", "tactic": "Exfiltration", "technique_id": "T1048.003",
+      "technique": "Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted Non-C2 Protocol",
+      "evidence": "FIN6 has sent stolen payment card data to remote servers via HTTP POSTs.",
+      "evidence_class": "Documented", "source": "MITRE ATT&CK G0037"
+    }
+  ]
+}

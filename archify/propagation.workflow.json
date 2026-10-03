@@ -1,0 +1,472 @@
+{
+ "schema_version": 2,
+ "diagram_type": "workflow",
+ "meta": {
+  "title": "Propagation Model per Actor",
+  "subtitle": "Stages without evidence are labelled Not documented",
+  "output": "figures/propagation.html",
+  "visual_preset": "signal-flow",
+  "quality_profile": "showcase",
+  "animation": "none"
+ },
+ "lanes": [
+  {
+   "id": "ta542",
+   "label": "TA542 (Emotet)"
+  },
+  {
+   "id": "ta542-cont",
+   "label": "TA542 · continuation"
+  },
+  {
+   "id": "ta505",
+   "label": "TA505 (Cl0p)"
+  },
+  {
+   "id": "ta505-cont",
+   "label": "TA505 · continuation"
+  },
+  {
+   "id": "fin6",
+   "label": "FIN6 (Siskin)"
+  },
+  {
+   "id": "fin6-cont",
+   "label": "FIN6 · continuation"
+  }
+ ],
+ "mainPath": [
+  "t542-ia",
+  "t542-ex",
+  "t542-pd",
+  "t542-pe",
+  "t542-c2",
+  "t542-cd"
+ ],
+ "phases": [
+  {
+   "id": "p1",
+   "label": "Initial Access & Execution",
+   "fromCol": 0,
+   "toCol": 1,
+   "variant": "emphasis"
+  },
+  {
+   "id": "p2",
+   "label": "Payload & Persistence",
+   "fromCol": 2,
+   "toCol": 3,
+   "variant": "security"
+  },
+  {
+   "id": "p3",
+   "label": "C2 & Credential Access",
+   "fromCol": 4,
+   "toCol": 5,
+   "variant": "dashed"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "t542-ia",
+   "lane": "ta542",
+   "col": 0,
+   "type": "external",
+   "label": "Initial Access",
+   "sublabel": "T1566.001/.002",
+   "width": 150
+  },
+  {
+   "id": "t542-ex",
+   "lane": "ta542",
+   "col": 1,
+   "type": "security",
+   "label": "Execution",
+   "sublabel": "T1204.002",
+   "width": 140
+  },
+  {
+   "id": "t542-pd",
+   "lane": "ta542",
+   "col": 2,
+   "type": "cloud",
+   "label": "Payload Delivery",
+   "sublabel": "T1105",
+   "width": 155
+  },
+  {
+   "id": "t542-pe",
+   "lane": "ta542",
+   "col": 3,
+   "type": "backend",
+   "label": "Persistence",
+   "sublabel": "T1547.001",
+   "width": 145
+  },
+  {
+   "id": "t542-c2",
+   "lane": "ta542",
+   "col": 4,
+   "type": "security",
+   "label": "C2",
+   "sublabel": "T1071.001",
+   "width": 112
+  },
+  {
+   "id": "t542-cd",
+   "lane": "ta542",
+   "col": 5,
+   "type": "database",
+   "label": "Credential / Data Access",
+   "sublabel": "T1056.001",
+   "width": 210
+  },
+  {
+   "id": "t542-lm",
+   "lane": "ta542-cont",
+   "col": 0,
+   "type": "cloud",
+   "label": "Lateral Movement",
+   "sublabel": "T1021.002",
+   "width": 175,
+   "yOffset": -14
+  },
+  {
+   "id": "t542-ob",
+   "lane": "ta542-cont",
+   "col": 0,
+   "type": "frontend",
+   "label": "Objective / Impact",
+   "sublabel": "Not documented",
+   "width": 185,
+   "yOffset": -80
+  },
+  {
+   "id": "t505-ia",
+   "lane": "ta505",
+   "col": 0,
+   "type": "external",
+   "label": "Initial Access",
+   "sublabel": "T1566.001",
+   "width": 150
+  },
+  {
+   "id": "t505-ex",
+   "lane": "ta505",
+   "col": 1,
+   "type": "security",
+   "label": "Execution",
+   "sublabel": "T1204.002",
+   "width": 140
+  },
+  {
+   "id": "t505-pd",
+   "lane": "ta505",
+   "col": 2,
+   "type": "cloud",
+   "label": "Payload Delivery",
+   "sublabel": "T1105",
+   "width": 155
+  },
+  {
+   "id": "t505-pe",
+   "lane": "ta505",
+   "col": 3,
+   "type": "backend",
+   "label": "Persistence",
+   "sublabel": "Not documented",
+   "width": 145
+  },
+  {
+   "id": "t505-c2",
+   "lane": "ta505",
+   "col": 4,
+   "type": "security",
+   "label": "C2",
+   "sublabel": "T1071.001",
+   "width": 112
+  },
+  {
+   "id": "t505-cd",
+   "lane": "ta505",
+   "col": 5,
+   "type": "database",
+   "label": "Credential / Data Access",
+   "sublabel": "T1056.001",
+   "width": 210
+  },
+  {
+   "id": "t505-lm",
+   "lane": "ta505-cont",
+   "col": 0,
+   "type": "cloud",
+   "label": "Lateral Movement",
+   "sublabel": "T1021.002",
+   "width": 175
+  },
+  {
+   "id": "t505-ob",
+   "lane": "ta505-cont",
+   "col": 1,
+   "type": "frontend",
+   "label": "Objective / Impact",
+   "sublabel": "T1486",
+   "width": 180
+  },
+  {
+   "id": "f6-ia",
+   "lane": "fin6",
+   "col": 0,
+   "type": "external",
+   "label": "Initial Access",
+   "sublabel": "T1566.002",
+   "width": 150
+  },
+  {
+   "id": "f6-ex",
+   "lane": "fin6",
+   "col": 1,
+   "type": "security",
+   "label": "Execution",
+   "sublabel": "T1204.002",
+   "width": 140
+  },
+  {
+   "id": "f6-pd",
+   "lane": "fin6",
+   "col": 2,
+   "type": "cloud",
+   "label": "Payload Delivery",
+   "sublabel": "T1105",
+   "width": 155
+  },
+  {
+   "id": "f6-pe",
+   "lane": "fin6",
+   "col": 1,
+   "type": "backend",
+   "label": "Persistence",
+   "sublabel": "T1053.005",
+   "width": 148,
+   "yOffset": 80
+  },
+  {
+   "id": "f6-c2",
+   "lane": "fin6",
+   "col": 4,
+   "type": "security",
+   "label": "C2",
+   "sublabel": "T1071.001",
+   "width": 112
+  },
+  {
+   "id": "f6-cd",
+   "lane": "fin6",
+   "col": 5,
+   "type": "database",
+   "label": "Credential / Data Access",
+   "sublabel": "T1003.001",
+   "width": 210
+  },
+  {
+   "id": "f6-lm",
+   "lane": "fin6-cont",
+   "col": 0,
+   "type": "cloud",
+   "label": "Lateral Movement",
+   "sublabel": "T1021.002",
+   "width": 175
+  },
+  {
+   "id": "f6-ob",
+   "lane": "fin6-cont",
+   "col": 1,
+   "type": "frontend",
+   "label": "Objective / Impact",
+   "sublabel": "Not documented",
+   "width": 185
+  }
+ ],
+ "edges": [
+  {
+   "id": "e542-1",
+   "from": "t542-ia",
+   "to": "t542-ex",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e542-2",
+   "from": "t542-ex",
+   "to": "t542-pd",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e542-3",
+   "from": "t542-pd",
+   "to": "t542-pe",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e542-4",
+   "from": "t542-pe",
+   "to": "t542-c2",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e542-5",
+   "from": "t542-c2",
+   "to": "t542-cd",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e542-6",
+   "from": "t542-cd",
+   "to": "t542-lm",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e542-7",
+   "from": "t542-lm",
+   "to": "t542-ob",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-1",
+   "from": "t505-ia",
+   "to": "t505-ex",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-2",
+   "from": "t505-ex",
+   "to": "t505-pd",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-3",
+   "from": "t505-pd",
+   "to": "t505-pe",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-4",
+   "from": "t505-pe",
+   "to": "t505-c2",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-5",
+   "from": "t505-c2",
+   "to": "t505-cd",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-6",
+   "from": "t505-cd",
+   "to": "t505-lm",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e505-7",
+   "from": "t505-lm",
+   "to": "t505-ob",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-1",
+   "from": "f6-ia",
+   "to": "f6-ex",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-2",
+   "from": "f6-ex",
+   "to": "f6-pd",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-3",
+   "from": "f6-pd",
+   "to": "f6-pe",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-4",
+   "from": "f6-pe",
+   "to": "f6-c2",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-5",
+   "from": "f6-c2",
+   "to": "f6-cd",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-6",
+   "from": "f6-cd",
+   "to": "f6-lm",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef6-7",
+   "from": "f6-lm",
+   "to": "f6-ob",
+   "variant": "emphasis"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "Canonical stage model",
+   "items": [
+    "Initial Access › Execution › Payload Delivery › Persistence",
+    "C2 › Credential / Data Access › Lateral Movement › Objective / Impact"
+   ]
+  },
+  {
+   "dot": "rose",
+   "title": "Not documented is literal",
+   "items": [
+    "A stage prints the exact words Not documented when the report holds no evidence",
+    "No stage is inferred, back-filled, or generalised from a sibling actor"
+   ]
+  },
+  {
+   "dot": "emerald",
+   "title": "Passive evidence only",
+   "items": [
+    "No detonation, no payload execution and no C2 contact",
+    "Every technique id is quoted from passive report evidence"
+   ]
+  }
+ ],
+ "semanticChecks": {
+  "requiredPaths": [
+   {
+    "from": "t542-ia",
+    "to": "t542-ob"
+   },
+   {
+    "from": "t505-ia",
+    "to": "t505-ob"
+   },
+   {
+    "from": "f6-ia",
+    "to": "f6-ob"
+   },
+   {
+    "from": "t542-ia",
+    "to": "t542-lm"
+   },
+   {
+    "from": "t505-ia",
+    "to": "t505-lm"
+   },
+   {
+    "from": "f6-ia",
+    "to": "f6-lm"
+   }
+  ]
+ }
+}
