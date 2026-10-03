@@ -94,8 +94,8 @@ EXEC_SUMMARY = (
     "pelaku secara deskriptif. Kerangka kerja ini mengikuti siklus intelijen ancaman "
     "yang lazim digunakan dalam praktik CTI (Tolah, 2025; Abraham et al., 2025) dan "
     "memanfaatkan taksonomi ATT&CK sebagai bahasa pemetaan bersama (Georgiadou et al., 2021). "
-    "Temuan utama pertama, pengumpulan indikator menghasilkan 36 baris indikator "
-    "ternormalisasi: 7 baris untuk TA542/Emotet dan 29 baris untuk TA505/Dridex, "
+    "Temuan utama pertama, pengumpulan indikator menghasilkan 35 baris indikator "
+    "ternormalisasi: 7 baris untuk TA542/Emotet dan 28 baris untuk TA505/Dridex, "
     "seluruhnya berasal dari publikasi resmi pemerintah dan telemetri sinkhole. "
     "Tidak satu pun indikator direkayasa; untuk FIN6 tidak terdapat indikator "
     "jaringan pada sumber yang dianalisis sehingga himpunannya dibiarkan kosong. "
@@ -252,7 +252,7 @@ SECTION_5 = (
     "perusahaan intelijen ancaman; luaran yang dihasilkan adalah laporan DOCX dan PDF, "
     "basis data indikator dalam bentuk CSV, berkas RIS dan BibTeX, arsip bukti, serta "
     "diagram alur kerja dan pemetaan. "
-    "Hasil ringkas per komponen proyek: pengumpulan indikator menghasilkan 36 baris "
+    "Hasil ringkas per komponen proyek: pengumpulan indikator menghasilkan 35 baris "
     "ternormalisasi dengan sumber yang tercatat; pemetaan teknik menghasilkan 70 baris "
     "teknik terdokumentasi; analisis infrastruktur menghasilkan karakterisasi kanal "
     "command and control untuk ketiga pelaku; analisis propagasi menghasilkan rantai "
@@ -317,8 +317,9 @@ SECTION_7 = (
 
 SECTION_APPENDIX = (
     "Lampiran memuat berkas yang benar-benar dihasilkan. Berkas indikator: "
-    "ioc/ta542_emotet_ioc.csv, ioc/ta505_dridex_ioc.csv, ioc/fin6_ioc.csv (kosong "
-    "dengan sengaja, lihat bagian batasan), dan ioc/all_ioc_normalized.csv. "
+    "ioc/ta542_emotet_ioc.csv, ioc/ta505_dridex_ioc.csv, dan ioc/all_ioc_normalized.csv. "
+    "Berkas fin6_ioc.csv tidak dibuat karena tidak ada indikator jaringan FIN6 pada sumber "
+    "yang dianalisis, dan berkas kosong berisiko disalahartikan sebagai data terkumpul. "
     "Berkas pemetaan: ttp_mapping.json dan salinannya di evidence/mitre. "
     "Berkas pustaka: references.ris, references.bib, refs_final.json, dan "
     "reference_validation.md. Arsip bukti: evidence/vendor_reports (advisory CISA "
@@ -359,7 +360,7 @@ ACTIVITY = [
      "E-03"),
     ("3 Okt 2026",
      "Normalisasi, validasi panjang hash, pemisahan IPv4, dan de-duplikasi",
-     "36 baris indikator ternormalisasi tanpa duplikat",
+     "35 baris indikator ternormalisasi tanpa duplikat",
      "E-04"),
     ("3 Okt 2026",
      "Pemetaan teknik ke MITRE ATT&CK dengan kalimat bukti asli",
@@ -389,7 +390,7 @@ EVIDENCE = [
      "Mendukung karakterisasi infrastruktur pada H-01",
      "Sedang"),
     ("E-04",
-     "Normalisasi menghasilkan 36 baris unik; tidak ada hash dengan panjang tidak sesuai",
+     "Normalisasi menghasilkan 35 baris unik; tidak ada hash dengan panjang tidak sesuai",
      "Validasi kualitas data indikator",
      "Tinggi"),
     ("E-05",
@@ -408,7 +409,7 @@ EVIDENCE = [
 
 FINDINGS = [
     ("Pengumpulan indikator",
-     "36 baris indikator ternormalisasi; 7 untuk TA542/Emotet dan 29 untuk TA505/Dridex; "
+     "35 baris indikator ternormalisasi; 7 untuk TA542/Emotet dan 29 untuk TA505/Dridex; "
      "FIN6 tidak memiliki indikator jaringan pada sumber yang dianalisis",
      "E-02, E-03, E-04"),
     ("Pemetaan teknik",
@@ -521,9 +522,9 @@ PROJECT_SECTIONS = [
                  "abuse.ch Feodo Tracker; MITRE ATT&CK S0367", "IPv4, teknik"],
                 ["TA505 / Dridex", "ioc/ta505_dridex_ioc.csv", "29",
                  "CISA AA19-339A", "IPv4, surel"],
-                ["FIN6", "ioc/fin6_ioc.csv", "0",
+                ["FIN6", "tidak ada berkas (lihat catatan)", "0",
                  "MITRE ATT&CK G0037 (teknik saja)", "Tidak terdokumentasi"],
-                ["Gabungan", "ioc/all_ioc_normalized.csv", "36",
+                ["Gabungan", "ioc/all_ioc_normalized.csv", "35",
                  "Kedua sumber di atas", "Campuran"],
             ],
             "Tabel 1. Hasil pengumpulan indikator per pelaku setelah normalisasi dan de-duplikasi.")),

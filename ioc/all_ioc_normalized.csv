@@ -1,5 +1,4 @@
 actor,malware,ioc_type,ioc_value,first_seen,last_seen,source,confidence,context
-FIN6,FrameworkPOS,technique,T1048.003,2016,2019,MITRE ATT&CK G0037,High,Card data exfiltrated to remote servers via HTTP POST
 TA505,Dridex,email,admin@belpay.by,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
 TA505,Dridex,email,admin@sevpazarlama.com,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures
 TA505,Dridex,email,bounce@bestvaluestore.org,2019-12-03,2020-06-30,CISA AA19-339A,Medium,Sender/return address used in Dridex phishing lures

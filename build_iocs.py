@@ -163,9 +163,10 @@ def main():
 
     write_csv(os.path.join(IOC_DIR, "ta542_emotet_ioc.csv"), emotet)
     write_csv(os.path.join(IOC_DIR, "ta505_dridex_ioc.csv"), dridex)
-    write_csv(os.path.join(IOC_DIR, "fin6_ioc.csv"), fin6)
+    # No fin6_ioc.csv is written: no network indicator for FIN6 exists in the analysed
+    # sources. An empty file would be indistinguishable from a collected dataset.
 
-    merged = emotet + dridex + fin6
+    merged = emotet + dridex
     seen, deduped = set(), []
     for r in merged:
         key = (r["actor"], r["ioc_type"], r["ioc_value"])
