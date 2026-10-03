@@ -2,50 +2,280 @@
  "schema_version": 2,
  "diagram_type": "workflow",
  "meta": {
-  "title": "Attack Chain per Actor (Documented Stages Only)",
-  "subtitle": "Documented stages only; stages the sources are silent on are printed as Not documented",
+  "title": "Rantai Serangan per Pelaku (Tahap Terdokumentasi)",
+  "subtitle": "Sumber: MITRE ATT&CK S0367, S0384, G0092, G0037 - diakses 3 Oktober 2026",
   "output": "figures/attack-chain.html",
   "visual_preset": "signal-flow",
   "quality_profile": "showcase",
-  "animation": "none",
-  "legend": {
-   "mode": "all"
-  }
+  "animation": "none"
  },
  "lanes": [
   {
    "id": "ta542",
-   "label": "TA542 — Emotet"
+   "label": "TA542 / Emotet / S0367"
   },
   {
    "id": "ta505",
-   "label": "TA505 — Dridex"
+   "label": "TA505 / Dridex / S0384, G0092"
   },
   {
    "id": "fin6",
-   "label": "FIN6"
+   "label": "FIN6 / G0037"
   }
  ],
- "phases": [
+ "nodes": [
   {
-   "id": "p1",
-   "label": "Initial access",
-   "fromCol": 0,
-   "toCol": 1,
+   "id": "t_phish",
+   "lane": "ta542",
+   "col": 0,
+   "type": "external",
+   "label": "Spearphishing",
+   "sublabel": "T1566.001/.002",
+   "width": 150
+  },
+  {
+   "id": "t_user",
+   "lane": "ta542",
+   "col": 1,
+   "type": "backend",
+   "label": "User execution",
+   "sublabel": "T1204.001/.002",
+   "width": 150
+  },
+  {
+   "id": "t_macro",
+   "lane": "ta542",
+   "col": 2,
+   "type": "backend",
+   "label": "Macro + PowerShell",
+   "sublabel": "T1059.005/.001",
+   "width": 170
+  },
+  {
+   "id": "t_persist",
+   "lane": "ta542",
+   "col": 3,
+   "type": "backend",
+   "label": "Persistence",
+   "sublabel": "T1547.001, T1543.003",
+   "width": 170
+  },
+  {
+   "id": "t_c2",
+   "lane": "ta542",
+   "col": 4,
+   "type": "security",
+   "label": "C2 over HTTP/HTTPS",
+   "sublabel": "T1071.001, T1571",
+   "width": 175
+  },
+  {
+   "id": "t_exfil",
+   "lane": "ta542",
+   "col": 5,
+   "type": "backend",
+   "label": "Exfiltration over C2",
+   "sublabel": "T1041",
+   "width": 165
+  },
+  {
+   "id": "s_phish",
+   "lane": "ta505",
+   "col": 0,
+   "type": "external",
+   "label": "Spearphishing",
+   "sublabel": "T1566.001/.002",
+   "width": 150
+  },
+  {
+   "id": "s_user",
+   "lane": "ta505",
+   "col": 1,
+   "type": "backend",
+   "label": "User execution",
+   "sublabel": "T1204.002",
+   "width": 150
+  },
+  {
+   "id": "s_script",
+   "lane": "ta505",
+   "col": 2,
+   "type": "backend",
+   "label": "VBS / JS / PowerShell",
+   "sublabel": "T1059.005/.007/.001",
+   "width": 175
+  },
+  {
+   "id": "s_evasion",
+   "lane": "ta505",
+   "col": 3,
+   "type": "security",
+   "label": "Defense evasion",
+   "sublabel": "T1218.007/.011",
+   "width": 170
+  },
+  {
+   "id": "s_c2",
+   "lane": "ta505",
+   "col": 4,
+   "type": "security",
+   "label": "P2P + fast-flux C2",
+   "sublabel": "T1090, T1568.001",
+   "width": 170
+  },
+  {
+   "id": "s_impact",
+   "lane": "ta505",
+   "col": 5,
+   "type": "backend",
+   "label": "Ransomware impact",
+   "sublabel": "T1486",
+   "width": 165
+  },
+  {
+   "id": "f_phish",
+   "lane": "fin6",
+   "col": 0,
+   "type": "external",
+   "label": "LinkedIn job lure",
+   "sublabel": "T1566.003",
+   "width": 160
+  },
+  {
+   "id": "f_doc",
+   "lane": "fin6",
+   "col": 1,
+   "type": "backend",
+   "label": "Document + PowerShell",
+   "sublabel": "T1204.002, T1059.001",
+   "width": 180
+  },
+  {
+   "id": "f_persist",
+   "lane": "fin6",
+   "col": 2,
+   "type": "backend",
+   "label": "Persistence",
+   "sublabel": "T1547.001, T1053.005",
+   "width": 170
+  },
+  {
+   "id": "f_privesc",
+   "lane": "fin6",
+   "col": 3,
+   "type": "backend",
+   "label": "Privilege escalation",
+   "sublabel": "T1068",
+   "width": 160
+  },
+  {
+   "id": "f_lat",
+   "lane": "fin6",
+   "col": 4,
+   "type": "backend",
+   "label": "Lateral movement",
+   "sublabel": "T1021.001",
+   "width": 160
+  },
+  {
+   "id": "f_pos",
+   "lane": "fin6",
+   "col": 5,
+   "type": "backend",
+   "label": "PoS card collection",
+   "sublabel": "T1005, T1119",
+   "width": 170
+  }
+ ],
+ "edges": [
+  {
+   "id": "et1",
+   "from": "t_phish",
+   "to": "t_user",
    "variant": "emphasis"
   },
   {
-   "id": "p2",
-   "label": "Execution and evasion",
-   "fromCol": 2,
-   "toCol": 3,
+   "id": "et2",
+   "from": "t_user",
+   "to": "t_macro",
    "variant": "emphasis"
   },
   {
-   "id": "p3",
-   "label": "Discovery, movement and impact",
-   "fromCol": 4,
-   "toCol": 5,
+   "id": "et3",
+   "from": "t_macro",
+   "to": "t_persist",
+   "variant": "emphasis"
+  },
+  {
+   "id": "et4",
+   "from": "t_persist",
+   "to": "t_c2",
+   "variant": "emphasis"
+  },
+  {
+   "id": "et5",
+   "from": "t_c2",
+   "to": "t_exfil",
+   "variant": "emphasis"
+  },
+  {
+   "id": "es1",
+   "from": "s_phish",
+   "to": "s_user",
+   "variant": "emphasis"
+  },
+  {
+   "id": "es2",
+   "from": "s_user",
+   "to": "s_script",
+   "variant": "emphasis"
+  },
+  {
+   "id": "es3",
+   "from": "s_script",
+   "to": "s_evasion",
+   "variant": "emphasis"
+  },
+  {
+   "id": "es4",
+   "from": "s_evasion",
+   "to": "s_c2",
+   "variant": "emphasis"
+  },
+  {
+   "id": "es5",
+   "from": "s_c2",
+   "to": "s_impact",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef1",
+   "from": "f_phish",
+   "to": "f_doc",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef2",
+   "from": "f_doc",
+   "to": "f_persist",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef3",
+   "from": "f_persist",
+   "to": "f_privesc",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef4",
+   "from": "f_privesc",
+   "to": "f_lat",
+   "variant": "emphasis"
+  },
+  {
+   "id": "ef5",
+   "from": "f_lat",
+   "to": "f_pos",
    "variant": "emphasis"
   }
  ],
@@ -54,471 +284,39 @@
   "t_user",
   "t_macro",
   "t_persist",
-  "t_cred",
-  "t_lat",
   "t_c2",
   "t_exfil"
  ],
- "nodes": [
+ "semanticChecks": {
+  "requiredPaths": []
+ },
+ "phases": [
   {
-   "id": "t_phish",
-   "lane": "ta542",
-   "col": 0,
-   "type": "security",
-   "label": "Phishing",
-   "sublabel": "T1566.001 / .002",
-   "width": 66
-  },
-  {
-   "id": "t_user",
-   "lane": "ta542",
-   "col": 1,
-   "type": "security",
-   "label": "User execution",
-   "sublabel": "T1204.001 / .002",
-   "width": 90
-  },
-  {
-   "id": "t_macro",
-   "lane": "ta542",
-   "col": 2,
-   "type": "security",
-   "label": "VBA macro + PowerShell",
-   "sublabel": "T1059.005 / .001",
-   "width": 144
-  },
-  {
-   "id": "t_persist",
-   "lane": "ta542",
-   "col": 3,
-   "type": "security",
-   "label": "Persistence",
-   "sublabel": "T1547.001 / T1543.003 / T1053.005",
-   "width": 127
-  },
-  {
-   "id": "t_cred",
-   "lane": "ta542",
-   "col": 4,
-   "type": "security",
-   "label": "Credential access",
-   "sublabel": "T1555.003 / T1003.001",
-   "width": 110
-  },
-  {
-   "id": "t_lat",
-   "lane": "ta542",
-   "col": 5,
-   "type": "security",
-   "label": "Lateral movement",
-   "sublabel": "T1021.002 / T1210",
-   "width": 103
-  },
-  {
-   "id": "t_c2",
-   "lane": "ta542",
-   "col": 1,
-   "type": "security",
-   "label": "C2 over HTTP/HTTPS",
-   "sublabel": "T1071.001 / T1571 / T1573.001",
-   "width": 117
-  },
-  {
-   "id": "t_exfil",
-   "lane": "ta542",
-   "col": 0,
-   "type": "security",
-   "label": "Exfiltration over C2",
-   "sublabel": "T1041",
-   "width": 130
-  },
-  {
-   "id": "t_gap",
-   "lane": "ta542",
-   "col": 5,
-   "type": "security",
-   "label": "Not documented: Privilege escalation, collection, impact",
-   "width": 375
-  },
-  {
-   "id": "s_phish",
-   "lane": "ta505",
-   "col": 0,
-   "type": "security",
-   "label": "Phishing",
-   "sublabel": "T1566.001 / .002",
-   "width": 66
-  },
-  {
-   "id": "s_user",
-   "lane": "ta505",
-   "col": 1,
-   "type": "security",
-   "label": "User execution",
-   "sublabel": "T1204.002",
-   "width": 90
-  },
-  {
-   "id": "s_script",
-   "lane": "ta505",
-   "col": 2,
-   "type": "security",
-   "label": "VBS/JS/PowerShell",
-   "sublabel": "T1059.005 / .007 / .001",
-   "width": 110
-  },
-  {
-   "id": "s_evasion",
-   "lane": "ta505",
-   "col": 3,
-   "type": "security",
-   "label": "Defense evasion",
-   "sublabel": "T1218.007 / .011 / T1553.002",
-   "width": 109
-  },
-  {
-   "id": "s_cred",
-   "lane": "ta505",
-   "col": 4,
-   "type": "security",
-   "label": "Credential access",
-   "sublabel": "T1555.003 / T1552.001",
-   "width": 110
-  },
-  {
-   "id": "s_lat",
-   "lane": "ta505",
-   "col": 5,
-   "type": "security",
-   "label": "Lateral movement via domain accounts",
-   "sublabel": "T1078.002",
-   "width": 239
-  },
-  {
-   "id": "s_c2",
-   "lane": "ta505",
-   "col": 3,
-   "type": "security",
-   "label": "P2P / fast-flux C2",
-   "sublabel": "T1090 / T1568.001 / T1573.001",
-   "width": 117
-  },
-  {
-   "id": "s_impact",
-   "lane": "ta505",
-   "col": 1,
-   "type": "security",
-   "label": "Ransomware impact",
-   "sublabel": "T1486",
-   "width": 110
-  },
-  {
-   "id": "s_gap",
-   "lane": "ta505",
-   "col": 2,
-   "type": "security",
-   "label": "Not documented: Persistence, privilege escalation, collection, exfiltration",
-   "width": 504
-  },
-  {
-   "id": "f_phish",
-   "lane": "fin6",
-   "col": 0,
-   "type": "security",
-   "label": "LinkedIn fake job spearphishing",
-   "sublabel": "T1566.003",
-   "width": 205
-  },
-  {
-   "id": "f_doc",
-   "lane": "fin6",
-   "col": 1,
-   "type": "security",
-   "label": "Malicious document + PowerShell",
-   "sublabel": "T1204.002 / T1059.001",
-   "width": 205
-  },
-  {
-   "id": "f_persist",
-   "lane": "fin6",
-   "col": 2,
-   "type": "security",
-   "label": "Persistence",
-   "sublabel": "T1547.001 / T1053.005",
-   "width": 84
-  },
-  {
-   "id": "f_privesc",
-   "lane": "fin6",
-   "col": 3,
-   "type": "security",
-   "label": "Privilege escalation",
-   "sublabel": "T1068",
-   "width": 130
-  },
-  {
-   "id": "f_dump",
-   "lane": "fin6",
-   "col": 4,
-   "type": "security",
-   "label": "Credential dumping",
-   "sublabel": "T1003.001 / T1003.003",
-   "width": 117
-  },
-  {
-   "id": "f_disc",
-   "lane": "fin6",
-   "col": 5,
-   "type": "security",
-   "label": "Discovery",
-   "sublabel": "T1018 / T1046",
-   "width": 56
-  },
-  {
-   "id": "f_lat",
-   "lane": "fin6",
-   "col": 3,
-   "type": "security",
-   "label": "Lateral movement",
-   "sublabel": "T1021.001 / T1078",
-   "width": 103
-  },
-  {
-   "id": "f_pos",
-   "lane": "fin6",
-   "col": 2,
-   "type": "security",
-   "label": "PoS card collection",
-   "sublabel": "T1005 / T1119",
-   "width": 124
-  },
-  {
-   "id": "f_exfil",
-   "lane": "fin6",
-   "col": 0,
-   "type": "security",
-   "label": "Exfiltration over HTTP POST",
-   "sublabel": "T1048.003",
-   "width": 178
-  },
-  {
-   "id": "f_gap",
-   "lane": "fin6",
-   "col": 1,
-   "type": "security",
-   "label": "Not documented: Impact",
-   "width": 144
-  }
- ],
- "edges": [
-  {
-   "id": "e_ta542_gap",
-   "from": "t_exfil",
-   "to": "t_gap",
-   "variant": "dashed",
-   "role": "branch"
-  },
-  {
-   "id": "e_ta505_gap",
-   "from": "s_impact",
-   "to": "s_gap",
-   "variant": "dashed",
-   "role": "branch"
-  },
-  {
-   "id": "e_fin6_gap",
-   "from": "f_exfil",
-   "to": "f_gap",
-   "variant": "dashed",
-   "role": "branch"
-  },
-  {
-   "id": "e_t_phish_t_user",
-   "from": "t_phish",
-   "to": "t_user",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_t_user_t_macro",
-   "from": "t_user",
-   "to": "t_macro",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_t_macro_t_persist",
-   "from": "t_macro",
-   "to": "t_persist",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_t_persist_t_cred",
-   "from": "t_persist",
-   "to": "t_cred",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_t_cred_t_lat",
-   "from": "t_cred",
-   "to": "t_lat",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_t_lat_t_c2",
-   "from": "t_lat",
-   "to": "t_c2",
-   "variant": "emphasis",
-   "role": "return"
-  },
-  {
-   "id": "e_t_c2_t_exfil",
-   "from": "t_c2",
-   "to": "t_exfil",
-   "variant": "emphasis",
-   "role": "return"
-  },
-  {
-   "id": "e_s_phish_s_user",
-   "from": "s_phish",
-   "to": "s_user",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_s_user_s_script",
-   "from": "s_user",
-   "to": "s_script",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_s_script_s_evasion",
-   "from": "s_script",
-   "to": "s_evasion",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_s_evasion_s_cred",
-   "from": "s_evasion",
-   "to": "s_cred",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_s_cred_s_lat",
-   "from": "s_cred",
-   "to": "s_lat",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_s_lat_s_c2",
-   "from": "s_lat",
-   "to": "s_c2",
-   "variant": "emphasis",
-   "role": "return"
-  },
-  {
-   "id": "e_s_c2_s_impact",
-   "from": "s_c2",
-   "to": "s_impact",
-   "variant": "emphasis",
-   "role": "return"
-  },
-  {
-   "id": "e_f_phish_f_doc",
-   "from": "f_phish",
-   "to": "f_doc",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_f_doc_f_persist",
-   "from": "f_doc",
-   "to": "f_persist",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_f_persist_f_privesc",
-   "from": "f_persist",
-   "to": "f_privesc",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_f_privesc_f_dump",
-   "from": "f_privesc",
-   "to": "f_dump",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_f_dump_f_disc",
-   "from": "f_dump",
-   "to": "f_disc",
-   "variant": "emphasis",
-   "role": "main"
-  },
-  {
-   "id": "e_f_disc_f_lat",
-   "from": "f_disc",
-   "to": "f_lat",
-   "variant": "emphasis",
-   "role": "return"
-  },
-  {
-   "id": "e_f_lat_f_pos",
-   "from": "f_lat",
-   "to": "f_pos",
-   "variant": "emphasis",
-   "role": "return"
-  },
-  {
-   "id": "e_f_pos_f_exfil",
-   "from": "f_pos",
-   "to": "f_exfil",
-   "variant": "emphasis",
-   "role": "return"
+   "id": "p1",
+   "label": "Akses awal sampai tujuan (teknik terdokumentasi)",
+   "fromCol": 0,
+   "toCol": 5,
+   "variant": "emphasis"
   }
  ],
  "cards": [
   {
    "dot": "cyan",
-   "title": "Technique provenance",
+   "title": "Basis bukti",
    "items": [
-    "Every technique id asserted by MITRE ATT&CK S0367 (TA542), S0384 (TA505), G0092 (FIN6) and G0037 (FIN6), accessed 2026-10-03",
-    "Stage wording and technique ids are reproduced from those groups' published procedure tables"
+    "Pengenal teknik dari MITRE ATT&CK S0367, S0384, G0092, G0037 (diakses 3 Oktober 2026)",
+    "Setiap baris pemetaan menyimpan kalimat bukti asli dari sumber"
    ]
   },
   {
    "dot": "rose",
-   "title": "Documented-only rule",
+   "title": "Tidak terdokumentasi",
    "items": [
-    "Stages the source set does not state are printed as Not documented, never inferred or extrapolated",
-    "An absent stage stays absent even when a similar actor is known to use it"
+    "TA542: Privilege Escalation, Collection, Impact",
+    "TA505: Persistence, Privilege Escalation, Collection, Exfiltration",
+    "FIN6: Impact",
+    "Tahap ini tidak digambar karena tidak ada bukti pada sumber yang dianalisis"
    ]
   }
- ],
- "semanticChecks": {
-  "requiredPaths": [
-   {
-    "from": "t_phish",
-    "to": "t_exfil"
-   },
-   {
-    "from": "s_phish",
-    "to": "s_impact"
-   },
-   {
-    "from": "f_phish",
-    "to": "f_exfil"
-   }
-  ]
- }
+ ]
 }

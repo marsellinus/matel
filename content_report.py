@@ -598,6 +598,8 @@ PROJECT_SECTIONS = [
               "administrasi normal. Pola ini paling sulit dideteksi dengan daftar "
               "hitam, karena alamat yang digunakan sering merupakan layanan yang sah "
               "dan diperlukan organisasi. Penanganannya menuntut anomali perilaku akun dan waktu akses, bukan pemadanan daftar hitam semata (Alodat, 2023)."),
+        ("figure", ("figures/attack-chain.png",
+                    "Gambar 2. Rantai serangan per pelaku; hanya tahap yang terdokumentasi yang digambar.")),
         ("table", (
             ["Pelaku", "Jenis kanal", "Karakteristik pasif", "Implikasi deteksi"],
             [
@@ -631,7 +633,7 @@ PROJECT_SECTIONS = [
               "ini bukan penilaian kemampuan, melainkan cerminan apa yang telah "
               "dipublikasikan."),
         ("figure", ("figures/propagation.png",
-                    "Gambar 2. Model propagasi per pelaku dengan penandaan tahap yang tidak terdokumentasi.")),
+                    "Gambar 3. Model propagasi per pelaku dengan penandaan tahap yang tidak terdokumentasi.")),
     ]),
     ("5.7 Analisis Komparatif", 2, [
         ("p", "Perbandingan di bawah bersifat deskriptif. Tidak ada peringkat subjektif "
@@ -666,7 +668,7 @@ PROJECT_SECTIONS = [
               "masing sumber, dan menandai hubungan tersebut sebagai tumpang tindih "
               "pelaporan."),
         ("figure", ("figures/campaign-timeline.png",
-                    "Gambar 3. Linimasa kampanye berdasarkan tanggal yang tercatat pada sumber.")),
+                    "Gambar 4. Linimasa kampanye berdasarkan tanggal yang tercatat pada sumber.")),
         ("p", "Perbedaan serupa muncul pada ketersediaan indikator. Telemetri sinkhole "
               "dan advisory pemerintah menyediakan indikator jaringan untuk TA542 dan "
               "TA505, sedangkan untuk FIN6 tidak ditemukan indikator jaringan pada "
@@ -690,13 +692,13 @@ PROJECT_SECTIONS = [
               "ini menuliskan status tersebut sebagai tidak terverifikasi dan tidak "
               "mengklaim kuartil apa pun. Etika riset menuntut hanya sumber yang dapat diakses secara legal yang dipakai (Kim et al., 2022)."),
         ("figure", ("figures/ttp-coverage.png",
-                    "Gambar 4. Cakupan taktik ATT&CK per pelaku beserta jumlah teknik "
+                    "Gambar 5. Cakupan taktik ATT&CK per pelaku beserta jumlah teknik "
                     "terdokumentasi (0 berarti tidak terdokumentasi pada sumber).")),
         ("figure", ("figures/actor-relationship.png",
-                    "Gambar 5. Hubungan pelaku, keluarga malware, dan himpunan indikator "
+                    "Gambar 6. Hubungan pelaku, keluarga malware, dan himpunan indikator "
                     "berdasarkan sumber yang dianalisis.")),
         ("figure", ("figures/workflow-methodology.png",
-                    "Gambar 6. Alur kerja intelijen ancaman pasif yang dijalankan pada MATEL.")),
+                    "Gambar 7. Alur kerja intelijen ancaman pasif yang dijalankan pada MATEL.")),
     ]),
     ("5.10 Pelaporan dan Keterlacakan", 2, [
         ("p", "Laporan ini menyertakan lima lapisan keterlacakan. Pertama, tabel "
